@@ -1,0 +1,35 @@
+{
+  "name": "snap-map-private-api",
+  "version": "0.0.1",
+  "description": "Node.js wrapper for Snap Map's private API",
+  "main": "index.js",
+  "keywords": [
+    "snap",
+    "snapchat",
+    "snap map",
+    "api"
+  ],
+  "scripts": {
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaliAlec/snap-map-private-api.git"
+  },
+  "author": {
+    "name": "Alec Garcia",
+    "url": "http://alecgarcia.me/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CaliAlec/snap-map-private-api/issues"
+  },
+  "homepage": "https://github.com/CaliAlec/snap-map-private-api",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "input": "^1.0.1",
+    "telegram": "^2.15.5"
+  }
+}
