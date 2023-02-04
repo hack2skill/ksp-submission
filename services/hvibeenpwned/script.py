@@ -22,7 +22,7 @@ def checkPawned(query):
 
         results = json.loads(soup.find('pre').contents[0])['Breaches']
     else:
-        results = contents
+        results = []
     driver.quit()
     return results
 
