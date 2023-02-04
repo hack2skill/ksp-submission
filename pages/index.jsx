@@ -1,28 +1,34 @@
 import { BsFillPersonFill } from "react-icons/bs";
 import Head from "next/head";
-import { useEffect, useState } from "react";
-import JSONfile from "../icjs.json";
+import { useState } from "react";
+import Table from "../components/Table";
 
 const Home = () => {
-  const [searchData, setSearchData] = useState({});
-  const [jsonData, setJsonData] = useState(JSONfile);
-  const [show, setShow] = useState(false);
+  const [searchData, setSearchData] = useState({
+    name: "CHANDAPPA",
+    ageFrom: "20",
+    ageTo: "30",
+  });
+  const [loader, setLoader] = useState(false);
+  const [data, setData] = useState([]);
 
-  useEffect(() => {
-    const filteredData = JSONfile.filter((data) =>
-      data.Person_Name?.toLowerCase().includes(searchData.name?.toLowerCase())
-    );
-    setJsonData(filteredData);
+  const getData = () => {
+    setLoader(true);
+    const fetchData = async () => {
+      const res = await fetch("/api/fetchData", {
+        method: "POST",
+        body: JSON.stringify(searchData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await res.json();
+      setData(data);
+      setLoader(false);
+    };
 
-    if (searchData.fatherName) {
-      const filteredData = JSONfile.filter((data) =>
-        data.Father_Name?.toLowerCase().includes(
-          searchData.fatherName?.toLowerCase()
-        )
-      );
-      setJsonData(filteredData);
-    }
-  }, [searchData]);
+    fetchData();
+  };
 
   return (
     <div className="">
@@ -32,6 +38,9 @@ const Home = () => {
       </Head>
 
       <main className="min-h-screen bg-gradient-to-r from-slate-200 to-zinc-100">
+        <code>
+          <pre>{JSON.stringify(searchData, null, 2)}</pre>
+        </code>
         <div className="pt-5 space-y-3 w-[40%] mx-auto">
           <div className="flex items-center space-x-5">
             <p className="text-sm font-bold flex-1">Name:</p>
@@ -67,25 +76,34 @@ const Home = () => {
               <input
                 className="outline-none bg-transparent w-full"
                 placeholder="From"
-                type="number"
+                onChange={(e) =>
+                  setSearchData({ ...searchData, ageFrom: e.target.value })
+                }
+                value={searchData.ageFrom}
+                type="text"
               />
             </div>
             <div className="px-4 w-full flex items-center py-2 border border-black rounded-md">
               <input
                 onChange={(e) =>
-                  setSearchData({ ...searchData, fatherName: e.target.value })
+                  setSearchData({ ...searchData, ageTo: e.target.value })
                 }
-                value={searchData.fatherName}
+                value={searchData.ageTo}
                 className="outline-none bg-transparent w-full"
                 placeholder="To"
-                type="number"
+                type="text"
               />
             </div>
           </div>
           <div className="space-x-5 flex items-center">
             <p className="text-sm font-bold flex-1">Gender</p>
             <div className="px-4 w-full flex items-center py-2 border border-black rounded-md">
-              <select className="outline-none font-normal text-sm text-gray-500 bg-transparent w-full">
+              <select
+                onChange={(e) =>
+                  setSearchData({ ...searchData, gender: e.target.value })
+                }
+                className="outline-none font-normal text-sm text-gray-500 bg-transparent w-full"
+              >
                 <option value="E">Choose</option>
                 <option value="M">Male</option>
                 <option value="F">Female</option>
@@ -116,15 +134,16 @@ const Home = () => {
             </div>
           </div>
           <button
-            onClick={() => setShow(!show)}
+            onClick={() => {
+              getData();
+            }}
             className="px-3 py-2 bg-red-500 text-white rounded-md shadow-lg active:scale-95 ease-out duration-100"
           >
             Search
           </button>
         </div>
-        <code className={!show && "hidden"}>
-          <pre>{JSON.stringify(jsonData, null, 2)}</pre>
-        </code>
+
+        <Table loader={loader} data={data} />
       </main>
     </div>
   );
