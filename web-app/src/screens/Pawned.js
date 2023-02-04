@@ -98,7 +98,13 @@ const data = [
 export default function Pawned() {
   return (
     <Box m={'8'} spacing="2">
-      <Text>Information fetched from hvrvoerv for the email/phone</Text>
+      <Text fontWeight={'bold'}>
+        Information fetched from{' '}
+        <Link href="haveibeenpwned.com" target="_blank" color={'blue'}>
+          haveibeenpwned.com
+        </Link>{' '}
+        for the email/phone
+      </Text>
       <TableContainer mt="6" p="8" fontSize={'xs'}>
         {data.map(dataitem => {
           return (
