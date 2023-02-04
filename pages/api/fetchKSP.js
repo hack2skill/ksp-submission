@@ -1,9 +1,7 @@
 import mongoose from "mongoose";
 import KSP from "../../modals/KSPModal";
 
-mongoose.connect(
-  "mongodb+srv://lolbhai:lolbhai@oneclick.le7cuhb.mongodb.net/police?retryWrites=true&w=majority"
-);
+mongoose.connect(process.env.mongo_url);
 
 export default async function handler(req, res) {
   var modal = await KSP.find();
