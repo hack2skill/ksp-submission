@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "mongoose": "^6.9.0",
     "mssql": "^9.1.1",
     "next": "latest",
     "react": "18.2.0",

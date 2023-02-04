@@ -28,7 +28,7 @@ const Table = ({ data, loader }) => {
               Object.keys(data[0])?.map((item, key) => {
                 return (
                   <th className="border sticky top-0 border-black" key={key}>
-                    {item}
+                    {item.replace("_", " ")}
                   </th>
                 );
               })}
@@ -40,10 +40,10 @@ const Table = ({ data, loader }) => {
                     {Object.keys(item).map((key, index) => {
                       return (
                         <td
-                          className="border bg-green-500 text-white font-bold border-black"
+                          className="border bg-green-500 text-white text-xs font-bold border-black"
                           key={index}
                         >
-                          {item[key]}
+                          {item[key].slice(1, -1)}
                         </td>
                       );
                     })}

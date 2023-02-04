@@ -10,12 +10,13 @@ const Navbar = () => {
           src={require("../images/ksp-logo.png")}
         />
         <p className="font-bold flex flex-col border rounded-lg hover:tracking-wider cursor-pointer px-4 py-2 hover:shadow-sm">
-          <span>Sarthak Tyagi</span>{" "}
+          <span>Chanakyha Vetri</span>{" "}
           <span className="font-medium text-xs">Karnataka</span>
         </p>
       </div>
     </header>
   );
+  x;
 };
 
 export default Navbar;

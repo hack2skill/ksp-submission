@@ -41,7 +41,7 @@ const Home = () => {
         <code>
           <pre>{JSON.stringify(searchData, null, 2)}</pre>
         </code>
-        <div className="pt-5 space-y-3 w-[40%] mx-auto">
+        <div className="pt-5 space-y-3 px-10 md:w-[40%] mx-auto">
           <div className="flex items-center space-x-5">
             <p className="text-sm font-bold flex-1">Name:</p>
             <div className="px-4 w-full flex items-center py-2 border border-black rounded-md">
