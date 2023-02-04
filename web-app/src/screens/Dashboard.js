@@ -1,39 +1,25 @@
-import { CloseIcon, HamburgerIcon, SearchIcon } from '@chakra-ui/icons';
+import { SearchIcon } from '@chakra-ui/icons';
 import {
-  Avatar,
   Box,
   Button,
   Card,
   CardBody,
   CardHeader,
   Center,
-  chakra,
-  Flex,
   Grid,
   Heading,
   HStack,
-  IconButton,
   Input,
   InputGroup,
   InputLeftElement,
   Link,
-  Menu,
-  MenuButton,
-  MenuDivider,
-  MenuItem,
-  MenuList,
-  shouldForwardProp,
-  Stack,
+  LinkBox,
+  LinkOverlay,
   Text,
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
-import { isValidMotionProp, motion } from 'framer-motion';
 import { useState } from 'react';
-import police from '../assets/police.png';
-import profile from '../assets/profile.webp';
-import ChakraaBox from '../components/chakrabox';
-import ChakraBox from '../components/chakrabox';
 
 const Links = ['Dashboard', 'Projects', 'Team'];
 
@@ -58,61 +44,6 @@ export default function Dashboard() {
 
   return (
     <>
-      <Box
-        bg={useColorModeValue('gray.100', 'gray.900')}
-        // UNCOMMENT
-        // bgGradient="linear(to-l,#002499, #04123d )"
-        px={4}
-      >
-        <Flex h={20} alignItems={'center'} justifyContent={'space-between'}>
-          <IconButton
-            size={'md'}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={'Open Menu'}
-            display={{ md: 'none' }}
-            onClick={isOpen ? onClose : onOpen}
-          />
-          <HStack spacing={8} alignItems={'center'}>
-            <Box>
-              <Avatar src={police} alt="KSP" />
-            </Box>
-
-            <Text fontSize="xl" fontWeight={'bold'} color="white">
-              KSP Crowdsourcing Dashboard
-            </Text>
-          </HStack>
-          <Flex alignItems={'center'}>
-            <Menu>
-              <MenuButton
-                as={Button}
-                rounded={'full'}
-                variant={'link'}
-                cursor={'pointer'}
-                minW={0}
-              >
-                <Avatar size={'sm'} src={profile} />
-              </MenuButton>
-              <MenuList>
-                <MenuItem>Profile</MenuItem>
-                <MenuItem>History</MenuItem>
-                <MenuDivider />
-                <MenuItem>Logout</MenuItem>
-              </MenuList>
-            </Menu>
-          </Flex>
-        </Flex>
-
-        {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }}>
-            <Stack as={'nav'} spacing={4}>
-              {Links.map(link => (
-                <NavLink key={link}>{link}</NavLink>
-              ))}
-            </Stack>
-          </Box>
-        ) : null}
-      </Box>
-
       <Box px={24} py="18">
         <Center>
           <Text px="2" py="8" fontWeight={'bold'} fontSize="lg">
@@ -141,22 +72,63 @@ export default function Dashboard() {
         <Box pt="10">
           <Center>
             <Grid templateColumns="repeat(3, 1fr)" gap={6}>
-              <Card
-                variant={'outline'}
-                _hover={{
-                  bg: 'teal.300',
-                  // transform: transform(1.5),
-                  color: 'white',
-                  // }}
-                }}
+              <LinkBox
+                as="article"
+                maxW="sm"
+                p="3"
+                borderWidth="1px"
+                rounded="md"
               >
-                <CardHeader>
-                  <Heading size="md">hi</Heading>
-                </CardHeader>
-                <CardBody>
-                  <Text>variant = hi</Text>
-                </CardBody>
-              </Card>
+                <Center mb="2" fontStyle={'semibold'}>
+                  Additional - Email
+                </Center>
+                <Card
+                  p="4"
+                  variant={'outline'}
+                  _hover={{
+                    bg: 'teal.300',
+                    // transform: transform(1.5),
+                    color: 'white',
+                    // }}
+                  }}
+                >
+                  <Heading size="md" my="2">
+                    <LinkOverlay href="/pawned" target="_blank">
+                      Check if the email has been pawned
+                    </LinkOverlay>
+                  </Heading>
+                  <Text>
+                    This also allows you to find their activity on other sites
+                  </Text>
+                </Card>
+              </LinkBox>
+
+              <LinkBox
+                as="article"
+                maxW="sm"
+                p="5"
+                borderWidth="1px"
+                rounded="md"
+              >
+                <LinkOverlay href="#">hi</LinkOverlay>
+                <Card
+                  variant={'outline'}
+                  _hover={{
+                    bg: 'teal.300',
+                    // transform: transform(1.5),
+                    color: 'white',
+                    // }}
+                  }}
+                >
+                  <CardHeader>
+                    <Heading size="md">hi</Heading>
+                  </CardHeader>
+                  <CardBody>
+                    <Text>variant = hi</Text>
+                  </CardBody>
+                </Card>
+                {/* </LinkOverlay> */}
+              </LinkBox>
 
               <Card
                 variant={'outline'}
