@@ -82,6 +82,7 @@ export default function Dashboard() {
 
   const [truecallerdata, getTruecaller] = useState();
   const [newtruecaller, setnew] = useState({});
+  const [iswhats, setwhats] = useState();
 
   const truecallerarraylist = [
     'phones',
@@ -144,6 +145,12 @@ export default function Dashboard() {
       });
   }
 
+  function getWhatsapp(searchString) {
+    axios.get('http://wa.me/+91' + searchstring).then(e => {
+      e.status == 200 ? setwhats(true) : setwhats(false);
+    });
+  }
+
   useEffect(() => {
     console.log(newtruecaller);
     console.log('vfnviefnv');
@@ -179,6 +186,7 @@ export default function Dashboard() {
           onClick={e => {
             setSearch(true);
             getTruecallerDatafun(searchstring);
+            getWhatsapp(searchstring);
           }}
         >
           Search
@@ -202,16 +210,20 @@ export default function Dashboard() {
                     <AccordionButton>
                       <Box as="span" flex="1" textAlign="left">
                         <Text fontWeight={'bold'}>Whatsapp Account</Text>
-                        <chip />
                       </Box>
                       <AccordionIcon />
                     </AccordionButton>
                   </h2>
                   <AccordionPanel pb={4}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    To check if this number has a whatsapp account please click
+                    the below link
+                    <br />
+                    <Link
+                      href={'https://wa.me/+91' + searchstring}
+                      target="_blank"
+                    >
+                      https://wa.me/+91{searchstring}
+                    </Link>
                   </AccordionPanel>
                 </AccordionItem>
 
