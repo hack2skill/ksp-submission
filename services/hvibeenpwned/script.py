@@ -6,7 +6,7 @@ import json
 from selenium.webdriver.chrome.options import Options
 
 
-DRIVER_PATH = 'C:/Users/psura/Projects/KSP/chromedriver_win32'
+DRIVER_PATH = ".\chromedriver_mac_arm64.zip"
 
 
 def checkPawned(query):
