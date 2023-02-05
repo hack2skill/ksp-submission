@@ -1,0 +1,39 @@
+.indiCol {
+  display: flex;
+  width: max-content;
+  background: #F7F7F7;
+  box-shadow: 0px 0px 1.55111px rgba(0, 0, 0, 0.5), 0px 4.77266px 16.7043px rgba(0, 0, 0, 0.26);
+  padding: 10px;
+  align-items: center;
+  height: 130px;
+  margin-left: 13px;
+  .named {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+}
+.header{
+  margin: 13px
+}
+.chartCreateMain {
+  border-right: 1px solid #9F9F9F;
+  width: max-content;
+}
+.chartDiv{
+  display: flex;
+  gap: 30px;
+  background: #F7F7F7;
+  box-shadow: 0px 0px 1.55px rgba(0, 0, 0, 0.25), -3px 7px 15px rgba(0, 0, 0, 0.25);
+  img {
+    width: 450px;
+  }
+  width: max-content;
+  padding: 30px;
+  margin-left: 13px;
+}
+.mainChartSec {
+  display: flex;
+  align-items: center;
+}
