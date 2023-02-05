@@ -8,6 +8,8 @@ import {
   InputGroup,
   InputLeftElement,
   Link,
+  Tag,
+  TagLabel,
   Text,
   useColorModeValue,
   useDisclosure,
@@ -91,6 +93,11 @@ export default function Dashboard() {
     'sources',
     'searchWarnings',
   ];
+  const chip = (
+    <Tag size={'sm'} borderRadius="full" variant="solid" colorScheme="green">
+      <TagLabel>FOUND</TagLabel>
+    </Tag>
+  );
 
   function getTelegram(searchString) {
     axios
@@ -218,7 +225,7 @@ export default function Dashboard() {
                     <AccordionButton>
                       <Box as="span" flex="1" textAlign="left">
                         <Text fontWeight={'bold'}>Telegram Account</Text>
-                        <Text>found</Text>
+                        {chip}
                       </Box>
                       <AccordionIcon />
                     </AccordionButton>
@@ -276,7 +283,7 @@ export default function Dashboard() {
                     <AccordionButton>
                       <Box as="span" flex="1" textAlign="left">
                         <Text fontWeight={'bold'}>Truecaller Account</Text>
-                        <Text>found</Text>
+                        {chip}
                       </Box>
                       <AccordionIcon />
                     </AccordionButton>
