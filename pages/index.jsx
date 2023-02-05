@@ -8,9 +8,14 @@ const Home = () => {
     name: "CHANDAPPA",
     ageFrom: "20",
     ageTo: "30",
+    database: {
+      icjs: true,
+      ksp: false,
+    },
   });
   const [loader, setLoader] = useState(false);
   const [data, setData] = useState([]);
+  const [kspData, setKspData] = useState([]);
 
   const getData = () => {
     setLoader(true);
@@ -24,6 +29,24 @@ const Home = () => {
       });
       const data = await res.json();
       setData(data);
+      setLoader(false);
+    };
+
+    fetchData();
+  };
+
+  const getDataForKsp = () => {
+    setLoader(true);
+    const fetchData = async () => {
+      const res = await fetch("/api/fetchKSP", {
+        method: "POST",
+        body: JSON.stringify(searchData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await res.json();
+      setKspData(data);
       setLoader(false);
     };
 
@@ -111,6 +134,39 @@ const Home = () => {
               <BsFillPersonFill className="w-5 h-5" />
             </div>
           </div>
+          <div className="flex space-x-3">
+            <div className="flex space-x-1">
+              <input
+                onChange={(e) =>
+                  setSearchData({
+                    ...searchData,
+                    database: {
+                      ...searchData.database,
+                      icjs: e.target.checked,
+                    },
+                  })
+                }
+                checked={searchData.database.icjs}
+                type="checkbox"
+                id="database-select"
+              />
+              <p>ICJS Database</p>
+            </div>
+            <div className="flex space-x-1">
+              <input
+                onChange={(e) =>
+                  setSearchData({
+                    ...searchData,
+                    database: { ...searchData.database, ksp: e.target.checked },
+                  })
+                }
+                checked={searchData.database.ksp}
+                type="checkbox"
+                id="database-select"
+              />
+              <p>Karnataka Database</p>
+            </div>
+          </div>
           <div className="flex space-x-5">
             <div className="cursor-pointer px-3 py-2 bg-blue-500 text-white rounded-md shadow-lg active:scale-95 ease-out duration-100">
               <label className="flex flex-col">
@@ -136,6 +192,7 @@ const Home = () => {
           <button
             onClick={() => {
               getData();
+              getDataForKsp();
             }}
             className="px-3 py-2 bg-red-500 text-white rounded-md shadow-lg active:scale-95 ease-out duration-100"
           >
@@ -143,7 +200,12 @@ const Home = () => {
           </button>
         </div>
 
-        <Table loader={loader} data={data} />
+        <Table
+          database={searchData.database}
+          loader={loader}
+          data={data}
+          kspData={kspData}
+        />
       </main>
     </div>
   );

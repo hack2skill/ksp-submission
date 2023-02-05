@@ -1,9 +1,9 @@
 import React from "react";
 import { MagnifyingGlass } from "react-loader-spinner";
 
-const Table = ({ data, loader }) => {
+const Table = ({ data, loader, kspData, database }) => {
   return (
-    <div className="mx-auto mt-10 w-screen ">
+    <div className="mx-auto py-10 w-screen ">
       <p className="font-bold text-center text-5xl mb-10">Results</p>
       <div className="flex justify-center">
         {loader && (
@@ -21,37 +21,90 @@ const Table = ({ data, loader }) => {
       </div>
 
       {!loader && (
-        <div className="w-[90%] mx-auto overflow-x-scroll border-2 border-black">
-          <table cellPadding={10} className="text-center">
-            {data &&
-              data.length > 0 &&
-              Object.keys(data[0])?.map((item, key) => {
-                return (
-                  <th className="border sticky top-0 border-black" key={key}>
-                    {item.replace("_", " ")}
-                  </th>
-                );
-              })}
-            {data &&
-              data.length > 0 &&
-              data.map((item, key) => {
-                return (
-                  <tr key={key}>
-                    {Object.keys(item).map((key, index) => {
-                      return (
-                        <td
-                          className="border bg-green-500 text-white text-xs font-bold border-black"
-                          key={index}
-                        >
-                          {item[key].slice(1, -1)}
-                        </td>
-                      );
-                    })}
-                  </tr>
-                );
-              })}
-          </table>
-        </div>
+        <>
+          <div className="w-[90%] mx-auto overflow-x-scroll">
+            {database.icjs && (
+              <>
+                <table cellPadding={10} className="text-center">
+                  <tbody>
+                    {data &&
+                      data.length > 0 &&
+                      Object.keys(data[0])?.map((item, key) => {
+                        return (
+                          <td
+                            className="border sticky top-0 border-black"
+                            key={key}
+                          >
+                            {item.replace("_", " ")}
+                          </td>
+                        );
+                      })}
+
+                    {data &&
+                      data.length > 0 &&
+                      data.map((item, key) => {
+                        return (
+                          <tr key={key}>
+                            {Object.keys(data[0]).map((value, index) => {
+                              return (
+                                <td
+                                  className="border bg-green-500 text-white text-xs font-bold border-black"
+                                  key={index}
+                                >
+                                  {item[value].slice(1, -1)}
+                                </td>
+                              );
+                            })}
+                          </tr>
+                        );
+                      })}
+                  </tbody>
+                </table>
+              </>
+            )}
+            {database.ksp && (
+              <>
+                <table cellPadding={10} className="text-center mt-5">
+                  <tbody>
+                    {kspData &&
+                      kspData.length > 0 &&
+                      Object.keys(kspData[0])?.map((item, key) => {
+                        if (key > 2)
+                          return (
+                            <td
+                              className="border sticky top-0 border-black"
+                              key={key}
+                            >
+                              {item.replace("_", " ")}
+                            </td>
+                          );
+                      })}
+
+                    {kspData &&
+                      kspData.length > 0 &&
+                      kspData.map((item, key) => {
+                        return (
+                          <tr key={key}>
+                            {Object.keys(kspData[0]).map((key, index) => {
+                              if (index > 2)
+                                return (
+                                  <td
+                                    className="border bg-red-500 text-white text-xs font-bold border-black"
+                                    key={index}
+                                  >
+                                    {item[key]}
+                                  </td>
+                                );
+                            })}
+                          </tr>
+                        );
+                      })}
+                  </tbody>
+                </table>
+              </>
+            )}
+          </div>
+        </>
       )}
     </div>
   );

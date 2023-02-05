@@ -6,6 +6,7 @@ const Navbar = () => {
     <header className="py-3 w-full  border-b">
       <div className="w-2/3 mx-auto flex items-center justify-between">
         <Image
+          alt="Logo"
           className="cursor-pointer w-20 h-20 rounded-full hover:shadow-lg ease-out duration-100 active:scale-95"
           src={require("../images/ksp-logo.png")}
         />

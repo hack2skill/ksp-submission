@@ -2392,6 +2392,7 @@ const KspModalSchema = new Schema({
     {
       name: "Perm_Address1",
       path: "Perm_Address1",
+      default: "",
       count: 193,
       types: [
         {
@@ -2399,6 +2400,7 @@ const KspModalSchema = new Schema({
           bsonType: "String",
           path: "Perm_Address1",
           count: 193,
+          default: "",
           values: [
             "PALIHATTI,BELLAVI HOBLI, TUMKUR TQ Tumakuru Karnataka",
             "Kadalu Village , Aluru Tq, Hassan Hassan Karnataka",
@@ -2510,6 +2512,7 @@ const KspModalSchema = new Schema({
           name: "Undefined",
           type: "Undefined",
           path: "Perm_Address1",
+          default: "-",
           count: 306,
           total_count: 0,
           probability: 0.6132264529058116,
@@ -3282,6 +3285,7 @@ const KspModalSchema = new Schema({
           total_count: 0,
           probability: 1,
           unique: 1,
+
           has_duplicates: true,
         },
       ],
