@@ -196,7 +196,9 @@ export default function Dashboard() {
           {/* facebook */}
           <>
             <Box px={8}>
-              <Text>Phone Search</Text>
+              <Text pb="5" fontWeight={'semibold'}>
+                Phone Search
+              </Text>
               <Accordion defaultIndex={[]} allowMultiple>
                 <AccordionItem bg={'#EDF2F7'}>
                   <h2>
