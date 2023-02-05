@@ -216,6 +216,7 @@ export default function Dashboard() {
                     <Link
                       href={'https://wa.me/+91' + searchstring}
                       target="_blank"
+                      color={'blue'}
                     >
                       https://wa.me/+91{searchstring}
                     </Link>
