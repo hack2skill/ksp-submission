@@ -138,12 +138,6 @@ export default function Dashboard() {
       });
   }
 
-  function getWhatsapp(searchString) {
-    axios.get('http://wa.me/+91' + searchstring).then(e => {
-      e.status == 200 ? setwhats(true) : setwhats(false);
-    });
-  }
-
   useEffect(() => {
     console.log(newtruecaller);
     console.log('vfnviefnv');
@@ -179,7 +173,6 @@ export default function Dashboard() {
           onClick={e => {
             setSearch(true);
             getTruecallerDatafun(searchstring);
-            getWhatsapp(searchstring);
           }}
         >
           Search
