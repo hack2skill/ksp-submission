@@ -1,0 +1,10 @@
+[Unit]
+Description=Gunicorn instance to serve xfactor_image_match_microservices_v2
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/projects/xfactor_image_match_microservices_v2
+Environment="PATH=/home/ubuntu/venv_dir/venv_image_match_v1/bin"
+ExecStart=/home/ubuntu/venv_dir/venv_image_match_v1/bin/gunicorn --workers 3 --bind unix:xfactor_image_match_microservices_v2.sock -m 007 run_flasked_api:app_wsgi --preload -b 0.0.0.0:4007

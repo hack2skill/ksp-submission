@@ -1,0 +1,13 @@
+{% extends "layout.html" %} {% block body %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4 align-self-center">Suspect Face Detection Application</h1>
+        <p class="lead"> Webapp for image processing for Karnataka Police Dept.</p>
+        <form id="" action="{{ url_for('app_main.upload') }}" method="POST" enctype="multipart/form-data">
+            Browse an image...
+            <input name="file" type="file" id="inputGroupFile04" accept="image/*">
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
