@@ -2,24 +2,27 @@
 import face_recognition
 #computer vision
 import cv2
+import os
 import numpy as np
 # webcam #0 
 video_capture = cv2.VideoCapture(0)
 # Loading sample pictures and learning
-elon_image = face_recognition.load_image_file("ImagesBasic/Elon Musk.webp")
-elon_face_encoding = face_recognition.face_encodings(elon_image)[0]
-biden_image = face_recognition.load_image_file("ImagesBasic/Joe Biden.jpg")
-biden_face_encoding = face_recognition.face_encodings(biden_image)[0]
+path = "ImagesBasic"
+l = []
+images = []
+classNames = []
+myList = os.listdir(path)
+for cl in myList:
+    curImg = face_recognition.load_image_file(f"{path}/{cl}")
+    curImg_encode = face_recognition.face_encodings(curImg)[0]
+    images.append(curImg_encode)
+    classNames.append(os.path.splitext(cl)[0])
+print(classNames)
+
 
 #list of known face encodings and their names
-known_face_encodings = [
-    elon_face_encoding,
-    biden_face_encoding
-]
-known_face_names = [
-    "Elon Musk",
-    "Joe Biden"
-]
+known_face_encodings =images
+known_face_names = classNames
 
 face_locations = []
 face_encodings = []
