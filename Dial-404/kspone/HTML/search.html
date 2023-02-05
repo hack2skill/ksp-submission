@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Filter Search</title>
+</head>
+
+<body style="background-color: antiquewhite">
+  <div class="container mt-5">
+    <h1>Filter Search</h1>
+    <form method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="search">Search:</label>
+        <input type="text" class="form-control" id="search" name="query">
+      </div>
+      </form>
+      <div class="form-group">
+        <label for="filter" class="d-block m-3">Filter By:</label>
+        <div class="container mx-3 justify-content-between d-flex">
+          <label class="d-inline-block mx-3" for="state">
+            State
+          </label>
+         
+          
+
+        </div>
+        <div class="form-check d-inline-block d-flex">
+          <label class="d-inline-block mx-3 p-0" for="crime">
+            CrimeStatus
+          </label>
+
+          <select class="form-control" for="crime">
+            <option selected>Filter by category</option>
+            <option>Arrested</option>
+            <option>Surrendered</option>
+            <option>Accused</option>
+          </select>
+        </div>
+
+        <div class="form-check d-inline-block d-flex">
+          <label class="d-inline-block mx-3" for="gender">
+            Gender
+          </label>
+          <select class="form-control" for="gender">
+            <option selected>Filter by category</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Others</option>
+          </select>
+
+        </div>
+        <div class="form-check d-inline-block d-flex">
+          <label class="d-inline-block mx-3" for="city">
+            City
+          </label>
+          <select class="form-control" for="city">
+            <option selected>Filter by category</option>
+            <option>Bengaluru City</option>
+            <option>Mysuru</option>
+            <option>Mandya</option>
+          </select>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+  </div>
+{#  <button type="submit" class="btn btn-primary">Submit</button>#}
+  
+
+  <section class="container m-4 d-block">
+    <div class="container mt-5">
+      <h1>Scrollable Table</h1>
+      <div style="background-color: khaki; display: flex; border-color: black; border-radius: 5px" class="table-responsive" id="table">
+        <table class="table table-bordered">
+          <thead>
+
+           <tr>
+              <td> Name</td>
+            </tr>
+          </thead>
+          <tbody>
+            {% if result %}
+            {%for name in result%}
+            <tr>
+              
+              <td>{{ name }}</td>
+              
+            </tr>
+            {%endfor%}
+            {%endif%}
+            
+            
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
+  </div>
+    <div style="left: 90px;bottom: 5px; padding: 5px;margin-left: 90%;margin-bottom: 5%">
+  <a style=" bottom: 5px; padding: 5px;" class="btn btn-info" href="{% url 'pdf' %}" target="_blank">View Invoice</a>
+    </div>
+</body>
+<style>
+  #table {
+    overflow-y: scroll;
+    height: 400px;
+  }
+</style>
+
+</html>
