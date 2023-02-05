@@ -51,6 +51,6 @@ Datazip started out as a end-to-end no-code data unification and analytics produ
 
 
 
-<img src="./Datazip.png" width="450" height="250" alt="Architecture"/>
+<img src="./Frontend/Datazip.png" width="450" height="250" alt="Architecture"/>
 
 
