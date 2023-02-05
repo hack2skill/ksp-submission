@@ -1,0 +1,202 @@
+,S.No,Bank Name,Merged Banks,Established ,Headquarter,Branches
+0,,Public Sector Banks,,,,
+1,1,Bank of Baroda,"Vijaya Bank, Dena Bank",1908.0,"Vadodara, Gujarat","9,481"
+2,2,Bank of India,,1906.0,"Mumbai, Maharashtra","5,000"
+3,3,Bank of Maharashtra,,1935.0,"Pune, Maharashtra","1,897"
+4,4,Canara Bank,Syndicate Bank,1906.0,"Bengaluru, Karnataka","10,342"
+5,5,Central Bank of India,,1911.0,"Mumbai, Maharashtra","4,666"
+6,6,Indian Bank,Allahabad Bank,1907.0,"Chennai, Tamil Nadu","6,104"
+7,7,Indian Overseas Bank,,1937.0,"Chennai, Tamil Nadu","3,400"
+8,8,Punjab and Sind Bank,,1908.0,"New Delhi, Delhi","1,554"
+9,9,Punjab National Bank,"Oriental Bank of Commerce, United Bank of India",1894.0,"New Delhi, Delhi","11,437"
+10,10,State Bank of India,"State Bank of Bikaner & Jaipur, State Bank of Hyderabad, State Bank of Indore, State Bank of Mysore, State Bank of Patiala, State Bank of Saurashtra, State Bank of Travancore, Bhartiya Mahila Bank",1955.0,"Mumbai, Maharashtra","24,000"
+11,11,UCO Bank,,1943.0,"Kolkata, West Bengal","4,000"
+12,12,Union Bank of India,"Andhra Bank, Corporation Bank",1919.0,"Mumbai, Maharashtra","9,609"
+13,,Private Sector Banks,,,,
+14,1,Axis Bank,,1993.0,"Mumbai, Maharashtra","4,528"
+15,2,Bandhan Bank,,2015.0,"Kolkata, West Bengal","1,187"
+16,3,CSB Bank,,1920.0,"Thrissur, Kerala",417
+17,4,City Union Bank,,1904.0,"Thanjavur, Tamil Nadu",700
+18,5,DCB Bank,,1930.0,"Mumbai, Maharashtra",341
+19,6,Dhanlaxmi Bank,,1927.0,"Thrissur, Kerala",247
+20,7,Federal Bank,,1931.0,"Kochi, Kerala","1,284"
+21,8,HDFC Bank,,1994.0,"Mumbai, Maharashtra","5,430"
+22,9,ICICI Bank,,1994.0,"Mumbai, Maharashtra","5,324"
+23,10,IDBI Bank,,1964.0,"Mumbai, Maharashtra","1,892"
+24,11,IDFC First Bank,,2015.0,"Mumbai, Maharashtra",523
+25,12,IndusInd Bank,,1994.0,"Mumbai, Maharashtra","1,911"
+26,13,Jammu & Kashmir Bank,,1938.0,"Srinagar, Jammu and Kashmir","1,038"
+27,14,Karnataka Bank,,1924.0,"Mangaluru, Karnataka",862
+28,15,Karur Vysya Bank,,1916.0,"Karur, Tamil Nadu",779
+29,16,Kotak Mahindra Bank,,2003.0,"Mumbai, Maharashtra","1,600"
+30,17,Nainital Bank,,1922.0,"Nainital, Uttarakhand",147
+31,18,RBL Bank,,1943.0,"Mumbai, Maharashtra",392
+32,19,South Indian Bank,,1929.0,"Thrissur, Kerala",929
+33,20,Tamilnad Mercantile Bank,,1921.0,"Thoothukudi, Tamil Nadu",509
+34,21,Yes Bank,,2004.0,"Mumbai, Maharashtra","1,119"
+35,,Regional Rural Bank (RRBs),,,,
+36,1,Andhra Pradesh,Andhra Pradesh Grameena Vikas Bank,2006.0,"Warangal, Telangana",755
+37,,,Andhra Pragathi Grameena Bank,2006.0,"Kadapa, Andhra Pradesh",552
+38,,,Chaitanya Godavari Gramin Bank,2006.0,"Guntur, Andhra Pradesh",219
+39,,,Saptagiri Gramin Bank,2006.0,"Chittoor, Andhra Pradesh",220
+40,2,Arunachal Pradesh,Arunachal Pradesh Rural Bank,1983.0,"Itanagar, Arunachal Pradesh",30
+41,3,Assam,Assam Gramin Vikash Bank,2006.0,"Guwahati, Assam",474
+42,4,Bihar,Dakshin Bihar Gramin Bank,2019.0,"Patna, India",1078
+43,,,Uttar Bihar Gramin Bank,1976.0,"Muzaffarpur, India",1001
+44,5,Chhattisgarh,Chhattisgarh Rajya Gramin Bank,,Raipur,625
+45,6,Gujarat,Baroda Gujarat Gramin Bank,,,
+46,,,Saurashtra Gramin Bank,,,
+47,7,Haryana,Sarva Haryana Gramin Bank,,,
+48,8,Himachal Pradesh,Himachal Pradesh Gramin Bank,,,
+49,9,Jammu And Kashmir,Ellaquai Dehati Bank,,,
+50,10,,Jammu And Kashmir Grameen Bank,,,
+51,11,Jharkhand,Jharkhand Rajya Gramin Bank,,,
+52,12,Karnataka,Karnataka Gramin Bank,,,
+53,,,Karnataka Vikas Grameena Bank,2005.0,"Dharwad, Karnataka",633
+54,13,Kerala,Kerala Gramin Bank,2013.0,"Malappuram, Kerala",634
+55,14,Madhya Pradesh,Madhya Pradesh Gramin Bank,2019.0,Indore,866
+56,,,Madhyanchal Gramin Bank,2012.0,"Sagar, Madhya Pradesh",
+57,15,Maharashtra,Maharashtra Gramin Bank,2008.0,"Aurangabad, India",391
+58,,,Vidarbha Konkan Gramin Bank,,,
+59,16,Manipur,Manipur Rural Bank,,,
+60,17,Meghalaya,Meghalaya Rural Bank,,,
+61,18,Mizoram,Mizoram Rural Bank,1983.0,"Aizawl, Mizoram",85
+62,19,Nagaland,Nagaland Rural Bank,1983.0,Kohima,10
+63,20,Odisha,Odisha Gramya Bank,2013.0,"Bhubaneswar, India",549
+64,,,Utkal Grameen Bank,2012.0,"Bolangir, India",442
+65,21,Puducherry,Puduvai Bharathiar Grama Bank,2008.0,"Pondicherry, India",43
+66,22,Punjab,Punjab Gramin Bank,2019.0,"Kapurthala,Punjab",419
+67,23,Rajasthan,Rajasthan Marudhara Gramin Bank,,,
+68,,,Baroda Rajasthan Kshetriya Gramin Bank,,,
+69,24,Tamil Nadu,Tamil Nadu Grama Bank,2019.0,"Salem, Tamil Nadu",630
+70,25,Telangana,Telangana Grameena Bank,,,356
+71,26,Tripura,Tripura Gramin Bank,1976.0,"Agartala, India",142
+72,27,Uttar Pradesh,Aryavart Bank,2019.0,"Lucknow, Uttar Pradesh",1365
+73,,,Baroda UP Bank,2020.0,"Gorakhpur, Uttar Pradesh",2050
+74,,,Prathama UP Gramin Bank,2019.0,"Moradabad, Uttar Pradesh",938
+75,28,Uttarakhand,Uttarakhand Gramin Bank,2012.0,"Dehradun, Uttarakhand",286
+76,10,West Bengal,Bangiya Gramin Vikash Bank,2007.0,"Berhampore, West Bengal",587
+77,,,Paschim Banga Gramin Bank,2007.0,"Howrah, West Bengal",230
+78,,,Uttarbanga Kshetriya Gramin Bank,1977.0,"Coochbehar, West Bengal",142
+79,,Small Finance Banks,,,,
+80,1,Ujjivan Small Finance Bank,,2017.0,Bangalore,464
+81,2,Jana Small Finance Bank,,2018.0,Bangalore,
+82,3,Equitas Small Finance Bank,,2016.0,Chennai,412
+83,4,AU Small Finance Bank,,2017.0,Jaipur,396
+84,5,Capital Small Finance Bank,,2016.0,Jalandhar,
+85,6,Fincare Small Finance Bank,,2017.0,Bangalore,
+86,7,ESAF Small Finance Bank,,2017.0,Thrissur,400
+87,8,North East Small Finance Bank,,2017.0,Guwahati,
+88,9,Suryoday Small Finance Bank,,2017.0,Navi Mumbai,
+89,10,Utkarsh Small Finance Bank,,2017.0,Varanasi,
+90,,Payments Banks,,,,
+91,1,Airtel Payments Bank,,2017.0,"New Delhi, Delhi",
+92,2,India Post Payments Bank,,2018.0,"New Delhi, Delhi",650
+93,3,Paytm Payments Bank,,2017.0,"Noida, Uttar Pradesh",
+94,4,Jio Payments Bank,,2018.0,"Mumbai, Maharashtra",
+95,5,Fino Payments Bank,,2017.0,"Mumbai, Maharashtra",410
+96,6,NSDL Payments Bank,,2018.0,"Mumbai, Maharashtra",
+97,,Foreign Banks,,,,
+98,1,AB Bank,,,,
+99,2,Abu Dhabi Commercial Bank,,,,
+100,3,American Express,,,,
+101,4,Australia and New Zealand Banking Group,,,,
+102,5,Barclays Bank Plc,,,,
+103,6,Bank of America,,,,
+104,7,Bank of Bahrain and Kuwait,,,,
+105,8,Bank of Ceylon,,,,
+106,9,Bank of China,,,,
+107,10,Bank of Nova Scotia,,,,
+108,11,BNP Paribas,,,,
+109,12,Citibank India,,,,
+110,14,Crédit Agricole Corporate and Investment Bank,,,,
+111,15,Credit Suisse,,,,
+112,16,CTBC Bank,,,,
+113,17,DBS Bank,,,,
+114,18,Deutsche Bank,,,,
+115,19,Emirates NBD,,,,
+116,20,First Abu Dhabi Bank,,,,
+117,21,FirstRand Bank,,,,
+118,22,HSBC,,,,
+119,23,Industrial & Commercial Bank of China,,,,
+120,24,Industrial Bank of Korea,,,,
+121,25,JPMorgan Chase,,,,
+122,26,KEB Hana Bank,,,,
+123,27,Kookmin Bank,,,,
+124,28,Krung Thai Bank,,,,
+125,29,Mizuho Corporate Bank,,,,
+126,30,MUFG Bank,,,,
+127,31,Qatar National Bank,,,,
+128,32,Rabobank,,,,
+129,33,Sberbank,,,,
+130,34,Shinhan Bank,,,,
+131,35,Societe Generale,,,,
+132,36,Sonali Bank,,,,
+133,37,Standard Chartered Bank,,,,
+134,38,Sumitomo Mitsui Banking Corporation,,,,
+135,39,United Overseas Bank,,,,
+136,40,Westpac Banking Corporation,,,,
+137,41,Woori Bank,,,,
+138,,State Co-Operative Banks (SCBs),,,,
+139,1,Kerala State Co-operative Bank Limited,,,,
+140,2,The Maharashtra State Co-operative Bank Limited,,,,
+141,3,Mizoram Co-operative Apex Bank,,,,
+142,4,Tamil Nadu State Apex Co-operative Bank,,,,
+143,5,West Bengal State Co-operative Bank,,,,
+144,,Urban Co-Operative Banks (UCBs),,,,
+145,1,Abhyudaya Co-operative Bank Ltd,,,,
+146,2,Ahmedabad Mercantile Co-Op Bank Limited,,,,
+147,3,Amanath Co-operative Bank Limited,,,,
+148,4,Andhra Pradesh Mahesh Co-Op Urban Bank Limited,,,,
+149,5,Apna Sahakari Bank Limited,,,,
+150,6,Bassein Catholic Co-operative Bank Limited,,,,
+151,7,Bharat Co-operative Bank (Mumbai) Limited,,,,
+152,8,Bombay Mercantile Co-operative Bank Limited,,,,
+153,9,Citizen Credit Co-operative Bank Limited,,,,
+154,10,Cosmos Bank,,,,
+155,11,Dombivli Nagari Sahakari Bank Ltd,,,,
+156,12,Fingrowth Co-operative Bank Limited,,,,
+157,13,Goa Urban Co-operative Bank Limited,,,,
+158,14,Gopinath Patil Parsik Janata Sahakari Bank Limited,,,,
+159,15,Greater Bombay Co-operative Bank Limited,,,,
+160,16,GS Mahanagar Co-operative Bank Limited,,,,
+161,17,Indian Mercantile Co-operative Bank Limited,,,,
+162,18,Jalgaon Janata Sahakari Bank Limited,,,,
+163,19,Jalgaon People's Co-operative Bank Limited,,,,
+164,20,Janakalyan Sahakari Bank Limited,,,,
+165,21,Janalaxmi Co-operative Bank Limited,,,,
+166,22,Janata Sahakari Bank Limited,,,,
+167,23,Kallappanna Awade Ichalkaranji Janata Sahakari Bank Limited,,,,
+168,24,Kalupur Commercial Co-Op Bank Limited,,,,
+169,25,Kalyan Janata Sahakari Bank Limited,,,,
+170,26,Karad Urban Co-operative Bank Limited,,,,
+171,27,Mapusa Urban Co-operative Bank of Goa Limited,,,,
+172,28,Nagar Urban Co-operative Bank Limited,,,,
+173,29,Nagpur Nagrik Sahakari Bank Limited,,,,
+174,30,Nasik Merchant's Co-operative Bank Limited,,,,
+175,31,New India Co-operative Bank Limited,,,,
+176,32,NKGSB Co-operative Bank Limited,,,,
+177,33,Nutan Nagarik Sahakari Bank Limited,,,,
+178,34,Pravara Sahakari Bank Limited,,,,
+179,35,Punjab and Maharashtra Co-operative Bank,,,,
+180,36,Rajarambapu Sahakari Bank Limited,,,,
+181,37,Rajkot Nagrik Sahakari Bank Limited,,,,
+182,38,Rupee Co-operative Bank Limited,,,,
+183,39,Sangli Urban Co-operative Bank Limited,,,,
+184,40,Saraswat Bank,,,,
+185,41,Sardar Bhiladwala Pardi People's Co-op. Bank Limited,,,,
+186,42,Shamrao Vithal Co-operative Bank,,,,
+187,43,Shikshak Sahakari Bank Limited,,,,
+188,44,Solapur Janata Sahakari Bank Limited,,,,
+189,45,Surat Peoples Coop Bank Limited,,,,
+190,46,Thane Bharat Sahakari Bank Limited,,,,
+191,47,The Akola Janata Commercial Co-operative Bank Limited,,,,
+192,48,The Akola Urban Co-operative Bank Limited,,,,
+193,49,The Jaynagar Majilpur People's Co-Operative Bank Limited,,,,
+194,50,The Khamgaon Urban Co-operative Bank Limited,,,,
+195,51,The Mehsana Urban Co-Op Bank Limited,,,,
+196,52,TJSB Sahakari Bank,,,,
+197,53,Vasai Vikas Sahakari Bank Limited,,,,
+198,54,Zoroastrian Co-operative Bank Limited,,,,
+199,,,,,,
+200,For more other formats visit www.downloadexcelfiles.com,,,,,
