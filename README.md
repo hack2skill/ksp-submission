@@ -1,3 +1,9 @@
+# ksp - submission
+This repository is created for Karnataka State Police Hackathon 2023 - submission collection
+## Team Information
+### Team Name - Team Breakpoint  
+### Problem Statement - Crowdsourcing of records
+
 # Enolahomes
 Enolahomes is an extensive suite built on top of the Django Python framework with scheduled multithreaded submodules like spiders, web crawler with sock proxy, OSINT modules for scraping information like social media account and other publicly available data including darkweb. This tool has an intelligent dashboard to monitor job queue and case investigate report portal.
 
