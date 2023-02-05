@@ -50,6 +50,29 @@ export default function BottomSearch() {
               </Text>
             </Card>
           </LinkBox>
+
+          <LinkBox as="article" maxW="sm" p="3" borderWidth="1px" rounded="md">
+            <Center mb="2" fontStyle={'semibold'}>
+              Location Monitoring
+            </Center>
+            <Card
+              p="4"
+              variant={'outline'}
+              _hover={{
+                bg: 'teal.300',
+                // transform: transform(1.5),
+                color: 'white',
+                // }}
+              }}
+            >
+              <Heading size="md" my="2">
+                <LinkOverlay href="/location-services" target="_blank">
+                  View social activity at the target location
+                </LinkOverlay>
+              </Heading>
+              <Text>Query by Latitude or Longitude</Text>
+            </Card>
+          </LinkBox>
         </Grid>
       </Center>
     </Box>

@@ -42,7 +42,6 @@ export default function NavBar() {
   return (
     <Box
       // bg={useColorModeValue('gray.100', 'gray.900')}
-      // UNCOMMENT
       bgGradient="linear(to-l,#002499, #04123d )"
       px={4}
     >
