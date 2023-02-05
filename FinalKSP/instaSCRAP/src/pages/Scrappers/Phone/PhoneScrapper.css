@@ -1,0 +1,30 @@
+.phonescrap{
+    margin-top: 15vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 600;
+}
+.enterphone{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fffdfd;
+}
+.phonebuttons{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+/* input, textarea {
+    
+  } */
+button{
+    margin: 50px;
+    margin-top: 30px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #000000;
+    color:#ffffff;
+}
