@@ -1,0 +1,135 @@
+{% load static %}
+
+<html>
+
+<head>
+    <title>Testing...</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+
+    <style>
+        body {
+            padding: 50px 0px 0px 0px;
+            z-index: 0;
+        }
+
+        .row-content {
+            margin: 0px auto;
+            padding: 50px 0px 50px 0px;
+            border-bottom: 1px ridge;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top bg-primary shadow">
+
+        <div class="container mt-2 mb-2 align-items-center">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <a class="navbar-brand" href="#"><img src="{% static 'logo.png' %}" height="50"></a>
+
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"><a class="nav-link" href="dashboard"><h3>Rebooting Rebels</h3></a></li>
+                </ul>
+
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="checkUrl"><h3>Check Url</h3></a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <div style="margin-top: 70px;"></div>
+
+    <!-- <i class="fa-solid fa-user"></i> -->
+
+    <div class="container align-items-center">
+
+        <div class="row justify-content-center row-content">
+
+            <div class="card border-0 shadow p-4">
+                <div class="card-body">
+                    <!-- <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a> -->
+
+                    <form action="/app/checkUrl" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="appurl" class="form-label">Application URL:</label>
+                            <input type="text" class="form-control" id="appurl" name="appurl"
+                                placeholder="Enter the app url you want to check for." value="">
+                        </div>
+
+                        {% if error is not None %}
+                        <div><small class="text-danger mt-3">* {{error}}</small></div>
+                        {% endif %}
+
+                        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        
+        {% if showResults %}
+        <div class="row justify-content-center row-content">
+            <a href="{{url}}" target="_blank"><h3><img src="{{icon}}" height="75"> {{title}} (Playstore Rating: {{score|floatformat:2}})</h3></a>
+       
+            <div class="card border-0 shadow p-4">
+                <div class="card-body">
+                    
+                    <ul class="list-group">
+                        <li class="list-group-item {% if spelling == 's'%} list-group-item-success {% elif spelling == 'w' %} list-group-item-warning {% else %} list-group-item-danger {% endif %}"> 
+                            <i class="fa {% if spelling == 's'%} fa-check {% elif spelling == 'w' %} fa-exclamation-triangle {% else %} fa-times {% endif %} fa-lg me-1" aria-hidden="true"></i> Spelling Checks
+                        </li>
+
+                        <li class="list-group-item {% if email == 's'%} list-group-item-success {% elif email == 'w' %} list-group-item-warning {% else %} list-group-item-danger {% endif %}"> 
+                            <i class="fa {% if email == 's'%} fa-check {% elif email == 'w' %} fa-exclamation-triangle {% else %} fa-times {% endif %} fa-lg me-1" aria-hidden="true"></i> Email
+                        </li>
+
+                        <li class="list-group-item {% if rbi_registration == 's'%} list-group-item-success {% elif rbi_registration == 'w' %} list-group-item-warning {% else %} list-group-item-danger {% endif %}"> 
+                            <i class="fa {% if rbi_registration == 's'%} fa-check {% elif rbi_registration == 'w' %} fa-exclamation-triangle {% else %} fa-times {% endif %} fa-times fa-lg me-1" aria-hidden="true"></i> RBI Registration
+                        </li>
+
+                        <li class="list-group-item {% if comments == 's'%} list-group-item-success {% elif comments == 'w' %} list-group-item-warning {% else %} list-group-item-danger {% endif %}"> 
+                            <i class="fa {% if comments == 's'%} fa-check {% elif comments == 'w' %} fa-exclamation-triangle {% else %} fa-times {% endif %} fa-lg me-1" aria-hidden="true"></i> Comment Check
+                        </li>
+                    </ul>
+                    Probability of app being Fraud: {{prob|floatformat:2}}
+
+                </div>
+            </div>
+
+        </div>
+        {% endif %}
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+</body>
+
+</html>

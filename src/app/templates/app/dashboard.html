@@ -1,0 +1,145 @@
+{% load static %}
+
+<html>
+
+<head>
+    <title>Testing...</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+
+    <style>
+        body {
+            padding: 50px 0px 0px 0px;
+            z-index: 0;
+        }
+
+        .row-content {
+            margin: 0px auto;
+            padding: 50px 0px 50px 0px;
+            border-bottom: 1px ridge;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top bg-primary shadow">
+
+        <div class="container mt-2 mb-2 align-items-center">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <a class="navbar-brand" href="#"><img src="{% static 'logo.png' %}" height="50"></a>
+
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="dashboard">
+                            <h3>Rebooting Rebels</h3>
+                        </a></li>
+                </ul>
+
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"><a class="nav-link" href="checkUrl">
+                            <h3>Check Url</h3>
+                        </a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <div style="margin-top: 70px;"></div>
+
+    <!-- <i class="fa-solid fa-user"></i> -->
+
+    <div class="container">
+
+        <div class="container align-items-center">
+
+            <div class="row justify-content-center row-content">
+
+                <div class="card border-0 shadow p-4">
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a> -->
+
+
+
+                        <form action="/app/dashboard" method="post">
+                            {% csrf_token %}
+                            <div class="input-group row">
+                                <div class="form-outline col-6">
+                                    <input type="search" class="form-control" name="search" placeholder="Search" value="{{keyword}}"/>
+                                </div>
+                                <div class="form-outline col-4">
+                                    <input type="date" class="form-control" name="date" value="{{date}}"/>
+                                </div>
+                                <button type="submit" class="btn btn-primary col-2">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        {% if result %}
+        <div class="row align-items-center p-4">
+            <a class="btn btn-primary" href="{% url 'report_pdf' %}">Generate Report</a>
+        </div>
+        {% endif %}
+
+        <div class="row">
+            {% for data in result %}
+            <div class="col-4">
+
+                <form method="post" action="/app/checkUrl">
+                    {% csrf_token %}
+                    <div class="card m-4 p-4 shadow-sm border-0">
+                        <div class="card-body justify-content-center">
+                            <h3>Fraud Probability - {{data.prob|floatformat:2}}</h3>
+                            <div><h4><img style="float:left" class="thumbnail d-flex me-3" height="100px" src="{{data.icon}}"
+                                    alt="{{data.title}}">
+                                {{data.title}}</h4></div>
+                            <h5>Rating: {{ data.score|floatformat:2 }}</h5>
+                        </div>
+                        <div>Last Updated: <small> {{ data.updated}}</small></div>
+                        <input type="hidden" value="{{data.appId}}" name="appid">
+                        <button type="submit" class="btn btn-primary mt-3">Check</button>
+                    </div>
+                </form>
+                
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+</body>
+
+</html>
