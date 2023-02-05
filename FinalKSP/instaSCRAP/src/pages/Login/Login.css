@@ -1,0 +1,8 @@
+.logincontainer{
+    width:100vw;
+    height: 91vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
