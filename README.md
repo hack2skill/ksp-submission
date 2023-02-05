@@ -26,7 +26,7 @@ Datazip started out as a end-to-end no-code data unification and analytics produ
 
 4. We are combining all the results from the above steps therefore unifying the results from various data sources and help the Police Department access it from one place.
 
-5. We calculate features on the datasets from the databases by running the FacialRecogDataPreparation.py file. This outputs .csv and .npy files which are used in FingerDataPreparation.py file.
+5. We calculate feature vectors on the datasets from the databases by running the `FacialRecogDataPreparation.py` and `FingerDataPreparation.py` file. This outputs .csv and .npy files which are used in `ImageRecognitionEndpoint.py` file. 
 
 ### Tech Stack
 
