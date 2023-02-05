@@ -1,10 +1,13 @@
 import mongoose from "mongoose";
 import KSP from "../../modals/KSPModal";
-// mongoose.set("strictQuery", false);
+mongoose.set("strictQuery", false);
 
-// mongoose.connect(process.env.mongo_url);
+mongoose.connect(process.env.mongo_url, () => {
+  console.log("connected to mongo");
+});
 export default async function handler(req, res) {
   var modal = await KSP.find();
+  console.log(modal);
 
   let filteredData;
 
@@ -36,7 +39,5 @@ export default async function handler(req, res) {
     );
   }
 
-  if (filteredData.length === 0)
-    return res.status(200).json({ message: "No Data Found" });
   return res.status(200).json(filteredData);
 }

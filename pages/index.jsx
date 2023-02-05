@@ -61,9 +61,9 @@ const Home = () => {
       </Head>
 
       <main className="min-h-screen bg-gradient-to-r from-slate-200 to-zinc-100">
-        <code>
+        {/* <code>
           <pre>{JSON.stringify(searchData, null, 2)}</pre>
-        </code>
+        </code> */}
         <div className="pt-5 space-y-3 px-10 md:w-[40%] mx-auto">
           <div className="flex items-center space-x-5">
             <p className="text-sm font-bold flex-1">Name:</p>
