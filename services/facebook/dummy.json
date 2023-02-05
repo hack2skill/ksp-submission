@@ -1,0 +1,33 @@
+{
+  "Friend_count": null,
+  "Follower_count": null,
+  "Following_count": null,
+  "id": "100004504299567",
+  "Name": "Supreeth Rao",
+  "Education": {
+    "Add high school": "Add college",
+    "College": "Vidya Shilp Academy",
+    "More options": "June 7, 2007 - Present"
+  },
+  "Work": "Add work",
+  "Places lived": [
+    {
+      "link": "/profile.php?id=106377336067638&eav=AfZhFWtMnGvuqTmVpsY8u_OqSIG4ZzY1Nf14kgtFAtUwmyBfqdGijFCdP9N9Lx4aKbM&paipv=0",
+      "text": "Bangalore, India",
+      "type": "Current city"
+    },
+    {
+      "link": "/profile.php?id=106377336067638&eav=AfZhFWtMnGvuqTmVpsY8u_OqSIG4ZzY1Nf14kgtFAtUwmyBfqdGijFCdP9N9Lx4aKbM&paipv=0",
+      "text": "Bangalore, India",
+      "type": "Hometown"
+    }
+  ],
+  "Contact info\nEdit": "Edit\n099028 00946\nMobile\n/supreeth.rao.90\nFacebook\nraosupreeth00@gmail.com\nEmail\nsupreethrao@aol.com\nEmail",
+  "Basic info\nEdit": "Edit\nSeptember 9, 2000\nBirthday\nMale\nGender\nEnglish language\nLanguages",
+  "Other names": "Add a nickname, a birth name...",
+  "Relationship": "Single\nMore options",
+  "Family members": "Add family member\nVandana Kulkarni\nMother\nMore options\nShashikanth Rao T\nFather\nMore options",
+  "About": "Write about yourself",
+  "Life events": "2012\nbirthday\n2007\nStarted School at Vidya Shilp Academy",
+  "Favorite quotes": "Add a favorite quotation"
+}
