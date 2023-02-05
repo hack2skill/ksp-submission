@@ -39,6 +39,9 @@ function Login(props) {
     <Grid container className={classes.container}>
       <div className={classes.logotypeContainer}>
         <img src={logo} alt="logo" className={classes.logotypeImage} style={{width: '200px'}}/>
+        <Typography variant="h4" className={classes.greeting}>
+          Fast. Accurate. Smart
+        </Typography>
       </div>
       <div className={classes.formContainer}>
         <div className={classes.form}>
@@ -56,6 +59,7 @@ function Login(props) {
               <Typography variant="h2" className={classes.greeting}>
                 Datazip Dashboard
               </Typography>
+              
               <div className={classes.formDividerContainer}>
                 <div className={classes.formDivider} />
                 {/* <Typography className={classes.formDividerWord}>or</Typography> */}
@@ -229,8 +233,10 @@ function Login(props) {
             </React.Fragment>
           )}
         </div>
-        <Typography color="primary" className={classes.copyright}>
-        © {new Date().getFullYear()} <a style={{ textDecoration: 'none', color: 'inherit' }} href="https://datazip.io" rel="noopener noreferrer" target="_blank">Datazip</a>
+        <Typography color="primary" className={classes.copyright} style={{textAlign: 'center'}}>
+          © {new Date().getFullYear()} <a style={{ textDecoration: 'none', color: 'inherit' }} href="https://datazip.io" rel="noopener noreferrer" target="_blank">Datazip</a>
+          <br />
+          <span>ಅಕ್ಕರೆಯಿಂದ ಮಾಡಿದ್ದು ನಮ್ಮ ಬೆಂಗಳೂರಿನಲ್ಲಿ</span>
         </Typography>
       </div>
     </Grid>
