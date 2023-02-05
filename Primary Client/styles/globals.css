@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+}
+
+.title {
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  }
+
+  
+.desc {
+  font-family: 'Sora', sans-serif;
+  font-weight: 400;
+  }
+
+  
+.hero-gradienty {
+  background-color:#101012;
+  background-image:
+    radial-gradient(at 50% 100%, #bbff0025 0, transparent 80%);
+	animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: 100%
+  	}
+	50% {
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: 200%;	}
+	100% {
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: 100%		}
+
+
+}
