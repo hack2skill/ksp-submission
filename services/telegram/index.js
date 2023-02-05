@@ -1,15 +1,19 @@
-'use strict'
-let express = require("express")
+"use strict";
+let express = require("express");
 let app = express();
-app.use(express.json())
 
+// Do `$npm install cors` in this folder
+var cors = require("cors"); //Add this
+app.use(cors()); //Add this
 
-app.get("/telegramUser/:username",async (req,res)=>{
-    let username = req.params.username;
+app.use(express.json());
 
-    let result = await require("./tele").getUsernameDetails(username);
-    res.send(result);
-})
-app.listen(3000,()=>{
-    console.log("listening on 3000")
-})
+app.get("/telegramUser/:username", async (req, res) => {
+  let username = req.params.username;
+
+  let result = await require("./tele").getUsernameDetails(username);
+  res.send(result);
+});
+app.listen(5002, () => {
+  console.log("Telegram running on 5002");
+});
