@@ -1,0 +1,56 @@
+.sidebar-style {
+
+    position: fixed;
+    top: 62.5 ;
+    left: 0 ;
+    bottom: 0 ;
+    width: 17rem ;
+    height: 100%;
+    background-color: #e5e5e5 ;
+    /* margin-top:3.5rem; */
+    /* padding-top: 5px; */
+    z-index: 999999;
+    overflow-x: hidden;
+    transition: all 0.5s;
+    padding: 0.5rem 1rem;
+}
+
+.sidebar-heading {
+    font-size: 20px;
+}
+
+.sidebar-icon-padding {
+    padding-right: 5px;
+}
+
+.nav-link {
+    color: #245aaacf;
+}
+.nav-pills .nav-link.active {
+    color: #fff;
+    background-color: #BF9A66;
+}
+.sidebar-navlink {
+
+    padding-left : 2px;
+    margin-top : 2px;
+}
+.sidebar-menubar {
+
+    color : white;
+}
+.navbar-style {
+
+    background-color: #AF8FB9;
+    position: fixed;
+    height:"80px";
+    z-index: 99999999;
+    overflow-y: hidden;
+}
+
+.bg-light {
+    background-color: #AF8FB9 !important;
+}
+.navbar-light .navbar-brand {
+    color: white;
+}
