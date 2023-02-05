@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+      
+        /* Style the navigation bar */
+        .navbar {
+          height: 100%;
+          width: 200px;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: lightgray;
+          overflow-x: hidden;
+          padding-top: 20px;
+        }
+  
+        /* Style the navigation links */
+        .navbar a {
+          padding: 6px 8px 6px 16px;
+          text-decoration: none;
+          font-size: 25px;
+          color: black;
+          display: block;
+        }
+        
+        .navbar a:hover {
+        background-color: dimgray;
+        color: white;
+      }
+      </style>
+</head>
+<body>
+   
+      <!-- Create the navigation bar -->
+    <div class="navbar">
+        <a href='' >Home</a>
+        <a href="">Search</a>
+        <a href="/fingerprint">FingerPrint</a>
+        <a href="/userguide">Userguide</a>
+    </div>
+    {% block content%}
+    
+    {% endblock %}
+</body>
+</html>

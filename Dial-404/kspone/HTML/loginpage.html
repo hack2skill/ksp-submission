@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% csrf_token %}
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="py-5 d-block my-0 px-0" >
+    <div class="container-fluid my-0">
+      <div class="row">
+        <div class="col-md-4 offset-md-4">
+          <div class="card">
+            <div class="card-header d-flex align-items-center justify-content-start">
+                <img class="d-flex" src="{%static 'rectangle-5@2x.png'%}" alt="">
+              <span class="d-flex px-1 mx-2">KSPONE</span>
+            </div>
+            <div class="card-body">
+              <form action="login" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="username">Username</label>
+                  <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter username" name="username">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password">
+                </div>
+                
+                <button type="submit" class="btn btn-primary d-inline-block mr-5 p-0" value="submit">Submit</button>
+              </form>
+              {%if messages%}
+                {% for message in messages %}
+                <div class="alert alert-danger" role="alert">
+    {{ message }}
+  </div>
+{% endfor %}
+{%endif%}
+            </div>
+            <div class="card-footer d-flex align-items-center justify-content-end">
+                <a href="">Help?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+    <style>
+        img{
+            max-width: 30%;
+        }
+    span{
+        font-size:200%;
+        font-weight: bolder;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    label{
+        font-weight: bolder;
+    }
+    button{
+        width: 100px;
+        height: 50px;
+    }
+    
+    </style>

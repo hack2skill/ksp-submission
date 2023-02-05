@@ -1,0 +1,51 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Search report</title>
+</head>
+<body>
+    <div class="container mt-5">
+
+      
+       
+        <section class="container m-4 d-block">
+            <div class="container mt-5">
+                <h1>Search results</h1>
+                <div class="table-responsive" id="table">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    
+                      {% if result %}
+                      {%for name in result%}            
+                      <tr>
+                        
+                        <td>{{ name }}</td>
+                        
+                      </tr>
+                      {%endfor%}
+                      {%endif%}
+                     
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+        </section>
+        
+        
+    </div>
+    <style>
+      body{
+        font-size: larger;
+      }
+    </style>
+</body>
+</html>
