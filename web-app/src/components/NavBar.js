@@ -41,9 +41,8 @@ export default function NavBar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box
-      bg={useColorModeValue('gray.100', 'gray.900')}
-      // UNCOMMENT
-      // bgGradient="linear(to-l,#002499, #04123d )"
+      // bg={useColorModeValue('gray.100', 'gray.900')}
+      bgGradient="linear(to-l,#002499, #04123d )"
       px={4}
     >
       <Flex h={20} alignItems={'center'} justifyContent={'space-between'}>
