@@ -6,4 +6,9 @@ This repository is created for Karnataka State Police Hackathon 2023 - submissio
 
 ### Team Name - Firebolts
 
+- Chanakyha
+- Aritra Saha
+- Suhas
+- Raksshitha
+
 ### Problem Statement - Unified Data Verification
