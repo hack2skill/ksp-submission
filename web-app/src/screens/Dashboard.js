@@ -359,7 +359,7 @@ export default function Dashboard() {
               </Accordion>
 
               <Box my="10">
-                <UpiInfo input="xxx" type="phone" />
+                <UpiInfo input={searchstring} type="phone" />
               </Box>
             </Box>
           </>
