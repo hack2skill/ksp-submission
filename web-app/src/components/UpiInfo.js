@@ -1,6 +1,6 @@
 import { Box, Card, List, ListItem, OrderedList } from '@chakra-ui/react';
 
-export default function UpiInfo({ input = 'xxx', type = 'phone' }) {
+export default function UpiInfo({ input, type = 'email' }) {
   const phone = ['paytm', 'ybl', 'axl', 'ibl'];
   const email = ['okicici', 'okaxis', 'okhdfcbank', 'oksbi'];
   return (
