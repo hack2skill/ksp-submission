@@ -1,0 +1,49 @@
+{% extends 'user/index.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<style>
+    /* input[type="text"]{
+        display: block;
+        width: 68vw;
+        margin: 15px;
+    }
+    label{
+        display: block;
+        margin: 15px;
+        text-align: left;
+    } */
+
+</style>
+<div class="container" style="text-align: center;" >
+    <div class="card shadow mb-4">
+        <!-- Card Header - Dropdown -->
+        <div
+            class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-primary">NameLookup</h6>   
+        </div>
+        <!-- Card Body -->
+        <div class="card-body" style="display:block ;">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Enter the case number</label>
+                <input type="text" class="form-control" id="case_number" aria-describedby="emailHelp" >
+            </div>
+            <button  class="btn btn-primary" onclick="input_check()" id="submitbutton" >Submit</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script_references %}
+<script>
+    // document.getElementById("submitbutton").addEventListener("onclick",input_check())
+    function input_check(){
+        let case_num = document.getElementById("case_number").value
+        if (case_num == "" || case_num==" " || case_num ==null){
+            alert("Please enter a valid input");
+        }
+        else{
+            location.pathname += case_num
+        }
+    }
+</script>
+{% endblock script_references %}
