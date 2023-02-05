@@ -6,136 +6,144 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
+  Tag,
+  TagLabel,
   Text,
 } from '@chakra-ui/react';
 
 import { Table, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import UpiInfo from './UpiInfo';
-
-const trucallerdata = {
-  data: [
-    {
-      id: 'XwzLH77u3MaOJFgX+u+fvQ==',
-      access: 'PUBLIC',
-      enhanced: true,
-      phones: [
-        {
-          e164Format: '+91990280046',
-          numberType: 'UNKNOWN',
-          nationalFormat: '990280046',
-          dialingCode: 91,
-          countryCode: 'IN',
-          carrier: '',
-          type: 'openPhone',
-        },
-      ],
-      addresses: [{ countryCode: 'IN', type: 'address' }],
-      internetAddresses: [],
-      badges: [],
-      tags: [],
-      cacheTtl: 86400000,
-      sources: [],
-      searchWarnings: [],
-      surveys: [
-        {
-          id: '100',
-          frequency: 3600,
-          passthroughData: 'eyAiMyI6ICI5MTk5MDI4MDA0NiIgfQ==',
-          perNumberCooldown: 7890000,
-        },
-        {
-          id: 'b6588ff4-47cb-46ce-8b11-015199c1f729',
-          frequency: 3600,
-          passthroughData: 'eyAiMyI6ICI5MTk5MDI4MDA0NiIgfQ==',
-          perNumberCooldown: 7890000,
-        },
-      ],
-      commentsStats: { showComments: false },
-      ns: 100,
-    },
-  ],
-  provider: 'ss-nu',
-  stats: { sourceStats: [] },
-};
-
-const newtruecaller = {
-  id: trucallerdata.data[0]?.id,
-  access: trucallerdata.data[0]?.access,
-  phones: trucallerdata.data[0]?.phones,
-  addresses: trucallerdata.data[0]?.addresses,
-  internetAddresses: trucallerdata.data[0]?.internetAddresses,
-  badges: trucallerdata.data[0]?.addresses,
-  tags: trucallerdata.data[0]?.tags,
-  sources: trucallerdata.data[0]?.sources,
-  searchWarnings: trucallerdata.data[0]?.searchWarnings,
-};
-
-const truecallerarraylist = [
-  'phones',
-  'addresses',
-  'internetAddresses',
-  'badges',
-  'tags',
-  'sources',
-  'searchWarnings',
-];
-
-const telegramdata = {
-  peer: { userId: '894241062', className: 'PeerUser' },
-  chats: [],
-  users: [
-    {
-      flags: 33554511,
-      self: false,
-      contact: false,
-      mutualContact: false,
-      deleted: false,
-      bot: false,
-      botChatHistory: false,
-      botNochats: false,
-      verified: false,
-      restricted: false,
-      min: false,
-      botInlineGeo: false,
-      support: false,
-      scam: false,
-      applyMinPhoto: true,
-      fake: false,
-      botAttachMenu: false,
-      premium: false,
-      attachMenuEnabled: false,
-      flags2: 0,
-      id: '894241062',
-      accessHash: '-8230826335575738556',
-      firstName: 'Suraj',
-      lastName: 'Kumar',
-      username: 'psk907',
-      phone: null,
-      photo: null,
-      status: { className: 'UserStatusRecently' },
-      botInfoVersion: null,
-      restrictionReason: null,
-      botInlinePlaceholder: null,
-      langCode: null,
-      emojiStatus: null,
-      usernames: null,
-      className: 'User',
-    },
-  ],
-  className: 'contacts.ResolvedPeer',
-};
 export default function PhoneSearch({ searchString }) {
+  const initialTrueCaller = {
+    data: [
+      {
+        id: 'XwzLH77u3MaOJFgX+u+fvQ==',
+        access: 'PUBLIC',
+        enhanced: true,
+        phones: [
+          {
+            e164Format: '+91990280046',
+            numberType: 'UNKNOWN',
+            nationalFormat: '990280046',
+            dialingCode: 91,
+            countryCode: 'IN',
+            carrier: '',
+            type: 'openPhone',
+          },
+        ],
+        addresses: [{ countryCode: 'IN', type: 'address' }],
+        internetAddresses: [],
+        badges: [],
+        tags: [],
+        cacheTtl: 86400000,
+        sources: [],
+        searchWarnings: [],
+        surveys: [
+          {
+            id: '100',
+            frequency: 3600,
+            passthroughData: 'eyAiMyI6ICI5MTk5MDI4MDA0NiIgfQ==',
+            perNumberCooldown: 7890000,
+          },
+          {
+            id: 'b6588ff4-47cb-46ce-8b11-015199c1f729',
+            frequency: 3600,
+            passthroughData: 'eyAiMyI6ICI5MTk5MDI4MDA0NiIgfQ==',
+            perNumberCooldown: 7890000,
+          },
+        ],
+        commentsStats: { showComments: false },
+        ns: 100,
+      },
+    ],
+    provider: 'ss-nu',
+    stats: { sourceStats: [] },
+  };
+  const [newtruecaller, settrucallerdata] = useState({});
+
+  const truecallerarraylist = [
+    'phones',
+    'addresses',
+    'internetAddresses',
+    'badges',
+    'tags',
+    'sources',
+    'searchWarnings',
+  ];
+
+  const telegramdata = {
+    peer: { userId: '894241062', className: 'PeerUser' },
+    chats: [],
+    users: [
+      {
+        flags: 33554511,
+        self: false,
+        contact: false,
+        mutualContact: false,
+        deleted: false,
+        bot: false,
+        botChatHistory: false,
+        botNochats: false,
+        verified: false,
+        restricted: false,
+        min: false,
+        botInlineGeo: false,
+        support: false,
+        scam: false,
+        applyMinPhoto: true,
+        fake: false,
+        botAttachMenu: false,
+        premium: false,
+        attachMenuEnabled: false,
+        flags2: 0,
+        id: '894241062',
+        accessHash: '-8230826335575738556',
+        firstName: 'Suraj',
+        lastName: 'Kumar',
+        username: 'psk907',
+        phone: null,
+        photo: null,
+        status: { className: 'UserStatusRecently' },
+        botInfoVersion: null,
+        restrictionReason: null,
+        botInlinePlaceholder: null,
+        langCode: null,
+        emojiStatus: null,
+        usernames: null,
+        className: 'User',
+      },
+    ],
+    className: 'contacts.ResolvedPeer',
+  };
   useEffect(() => {
     console.log(searchString + ' ccdcosmcksj');
-    var truecallerapidata = {};
+
     axios
       .get(
         'https://00a7-119-161-98-68.in.ngrok.io/truecaller?phno=' + searchString
       )
-      .then(a => (trucallerdata = a.data));
-    console.log(truecallerapidata);
+      .then(a =>
+        settrucallerdata({
+          id: a?.data?.data[0]?.id,
+          access: a?.data?.data[0]?.access,
+          phones: a?.data?.data[0]?.phones,
+          addresses: a?.data?.data[0]?.addresses,
+          internetAddresses: a?.data?.data[0]?.internetAddresses,
+          badges: a?.data?.data[0]?.addresses,
+          tags: a?.data?.data[0]?.tags,
+          sources: a?.data?.data[0]?.sources,
+          searchWarnings: a?.data?.data[0]?.searchWarnings,
+        })
+      );
+    console.log(newtruecaller);
   }, [searchString]);
+
+  const chip = (
+    <Tag size={'sm'} borderRadius="full" variant="solid" colorScheme="green">
+      <TagLabel>FOUND</TagLabel>
+    </Tag>
+  );
 
   return (
     <>
@@ -147,7 +155,7 @@ export default function PhoneSearch({ searchString }) {
               <AccordionButton>
                 <Box as="span" flex="1" textAlign="left">
                   <Text fontWeight={'bold'}>Whatsapp Account</Text>
-                  <Text>found</Text>
+                  {chip}
                 </Box>
                 <AccordionIcon />
               </AccordionButton>
@@ -165,7 +173,7 @@ export default function PhoneSearch({ searchString }) {
               <AccordionButton>
                 <Box as="span" flex="1" textAlign="left">
                   <Text fontWeight={'bold'}>Telegram Account</Text>
-                  <Text>found</Text>
+                  {chip}
                 </Box>
                 <AccordionIcon />
               </AccordionButton>
@@ -219,7 +227,7 @@ export default function PhoneSearch({ searchString }) {
               <AccordionButton>
                 <Box as="span" flex="1" textAlign="left">
                   <Text fontWeight={'bold'}>Telegram Account</Text>
-                  <Text>found</Text>
+                  {chip}
                 </Box>
                 <AccordionIcon />
               </AccordionButton>
