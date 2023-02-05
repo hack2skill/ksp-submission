@@ -28,6 +28,7 @@ import {
 import { Table, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import UpiInfo from '../components/UpiInfo';
+import { API_URL } from '../api_url';
 
 const telegramdata = {
   peer: { userId: '894241062', className: 'PeerUser' },
@@ -84,6 +85,7 @@ export default function Dashboard() {
   const [newtruecaller, setnew] = useState({});
   const [iswhats, setwhats] = useState();
 
+  const [fbData, setFbData] = useState();
   const truecallerarraylist = [
     'phones',
     'addresses',
@@ -100,49 +102,51 @@ export default function Dashboard() {
   );
 
   function getTelegram(searchString) {
-    axios
-      .get(
-        'https://00a7-119-161-98-68.in.ngrok.io/telegram?phno=' + searchString
-      )
-      .then(a => {
-        getTruecaller(a?.data);
-        console.log(a?.data);
+    axios.get(API_URL + 'telegram?phno=' + searchString).then(a => {
+      getTruecaller(a?.data);
+      console.log(a?.data);
 
-        setnew({
-          id: truecallerdata?.data[0]?.id,
-          access: truecallerdata?.data[0]?.access,
-          phones: truecallerdata?.data[0]?.phones,
-          addresses: truecallerdata?.data[0]?.addresses,
-          internetAddresses: truecallerdata?.data[0]?.internetAddresses,
-          badges: truecallerdata?.data[0]?.addresses,
-          tags: truecallerdata?.data[0]?.tags,
-          sources: truecallerdata?.data[0]?.sources,
-          searchWarnings: truecallerdata?.data[0]?.searchWarnings,
-        });
+      setnew({
+        id: truecallerdata?.data[0]?.id,
+        access: truecallerdata?.data[0]?.access,
+        phones: truecallerdata?.data[0]?.phones,
+        addresses: truecallerdata?.data[0]?.addresses,
+        internetAddresses: truecallerdata?.data[0]?.internetAddresses,
+        badges: truecallerdata?.data[0]?.addresses,
+        tags: truecallerdata?.data[0]?.tags,
+        sources: truecallerdata?.data[0]?.sources,
+        searchWarnings: truecallerdata?.data[0]?.searchWarnings,
       });
+    });
+  }
+
+  function getFacebookData(username) {
+    console.log('Facebook searchhhh');
+    axios.get(API_URL + 'facebook?fbid=' + username).then(a => {
+      if (a.status == 200) {
+        setFbData(a.data);
+        console.log(a.data);
+      }
+    });
   }
 
   function getTruecallerDatafun(searchString) {
-    axios
-      .get(
-        'https://00a7-119-161-98-68.in.ngrok.io/truecaller?phno=' + searchString
-      )
-      .then(a => {
-        getTruecaller(a?.data);
-        console.log(a?.data);
+    axios.get(API_URL + 'truecaller?phno=' + searchString).then(a => {
+      getTruecaller(a?.data);
+      console.log(a?.data);
 
-        setnew({
-          id: truecallerdata?.data[0]?.id,
-          access: truecallerdata?.data[0]?.access,
-          phones: truecallerdata?.data[0]?.phones,
-          addresses: truecallerdata?.data[0]?.addresses,
-          internetAddresses: truecallerdata?.data[0]?.internetAddresses,
-          badges: truecallerdata?.data[0]?.addresses,
-          tags: truecallerdata?.data[0]?.tags,
-          sources: truecallerdata?.data[0]?.sources,
-          searchWarnings: truecallerdata?.data[0]?.searchWarnings,
-        });
+      setnew({
+        id: truecallerdata?.data[0]?.id,
+        access: truecallerdata?.data[0]?.access,
+        phones: truecallerdata?.data[0]?.phones,
+        addresses: truecallerdata?.data[0]?.addresses,
+        internetAddresses: truecallerdata?.data[0]?.internetAddresses,
+        badges: truecallerdata?.data[0]?.addresses,
+        tags: truecallerdata?.data[0]?.tags,
+        sources: truecallerdata?.data[0]?.sources,
+        searchWarnings: truecallerdata?.data[0]?.searchWarnings,
       });
+    });
   }
 
   useEffect(() => {
@@ -150,6 +154,74 @@ export default function Dashboard() {
     console.log('vfnviefnv');
   }, [newtruecaller]);
 
+  const facebookSection = (
+    <AccordionItem bg={'#EDF2F7'}>
+      <h2>
+        <AccordionButton>
+          <Box as="span" flex="1" textAlign="left">
+            <Text fontWeight={'bold'}>Facebook Section</Text>
+            {chip}
+          </Box>
+          <AccordionIcon />
+        </AccordionButton>
+      </h2>
+      <AccordionPanel pb={4}>
+        <Table
+          whiteSpace={'normal'}
+          variant="simple"
+          size="s"
+          mb="34"
+          w={'100%'}
+        >
+          <Thead>
+            <Tr>
+              <Th>Dataset</Th>
+              <Th>Information Available</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            {newtruecaller.id != undefined &&
+              Object.keys(newtruecaller).map(e => {
+                // console.log(newtruecaller);
+                console.log(e);
+                if (truecallerarraylist.includes(e))
+                  return (
+                    <Tr>
+                      <Td>{e}</Td>
+                      {newtruecaller[e].map(newe => {
+                        return (
+                          <Td>
+                            <Table size="s">
+                              {Object.keys(newe).map(i => {
+                                return (
+                                  <Tr>
+                                    <Td>{i}</Td>
+                                    <Td>{newe[i]}</Td>
+                                  </Tr>
+                                );
+                              })}
+                            </Table>
+                            <Box w="100">{newtruecaller[e].toString()}</Box>
+                          </Td>
+                        );
+                      })}
+                    </Tr>
+                  );
+                else
+                  return (
+                    <Tr>
+                      <Td>{e}</Td>
+                      <Td>
+                        <Box w="100">{newtruecaller[e].toString()}</Box>
+                      </Td>
+                    </Tr>
+                  );
+              })}
+          </Tbody>
+        </Table>
+      </AccordionPanel>
+    </AccordionItem>
+  );
   return (
     <Box px={24} py="18">
       <Center>
@@ -180,6 +252,7 @@ export default function Dashboard() {
           onClick={e => {
             setSearch(true);
             getTruecallerDatafun(searchstring);
+            getFacebookData(searchstring);
           }}
         >
           Search
@@ -193,7 +266,7 @@ export default function Dashboard() {
 
       {isSearched ? (
         <Box mt="10">
-          {/* facebook */}
+          {/* TODO: facebook */}
           <>
             <Box px={8}>
               <Text pb="5" fontWeight={'semibold'}>
@@ -352,10 +425,12 @@ export default function Dashboard() {
                     </Table>
                   </AccordionPanel>
                 </AccordionItem>
+
+                {facebookSection}
               </Accordion>
 
               <Box my="10">
-                <UpiInfo input={searchstring} type="phone" />
+                <UpiInfo input="7348991609" type="phone" />
               </Box>
             </Box>
           </>

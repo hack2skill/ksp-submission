@@ -99,11 +99,10 @@ export default function Pawned() {
   return (
     <Box m={'8'} spacing="2">
       <Text fontWeight={'bold'}>
-        Information fetched from{' '}
+        Breached Datasets containing{' '}
         <Link href="haveibeenpwned.com" target="_blank" color={'blue'}>
-          haveibeenpwned.com
+          p.surajkumar907@gmail.com
         </Link>{' '}
-        for the email/phone
       </Text>
       <TableContainer mt="6" p="8" fontSize={'xs'}>
         {data.map(dataitem => {
@@ -118,7 +117,7 @@ export default function Pawned() {
               >
                 <Thead>
                   <Tr>
-                    <Th>Dataset</Th>
+                    <Th>Data Item</Th>
                     <Th>Information Available</Th>
                   </Tr>
                 </Thead>
