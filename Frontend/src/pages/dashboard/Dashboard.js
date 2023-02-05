@@ -11,22 +11,24 @@ import Table from "./components/Table/Table";
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { ToastContainer } from "react-toastify";
-import { FileCopy, Search, Settings } from "@material-ui/icons";
+import { FaceOutlined, FingerprintOutlined, Search, Settings } from "@material-ui/icons";
 
 import mock from './mock'
+import { Typography } from '@material-ui/core';
 
 
 export default function Dashboard(props) {
   const classes = useStyles();
 
-  const eventImageInput = React.useRef();
+  const fingerPrintImageInput = React.useRef();
+  const faceImageInput = React.useRef();
 
-  // eslint-disable-next-line no-unused-vars
-  const [eventImage, setEventImage] = useState(null);
+  const [fingerPrintImage, setFingerPrintImage] = useState(null);
+  const [faceImage, setFaceImage] = useState(null);
 
   const [searchOptions, setSearchOptions] = useState(mock.table);
 
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState();
   const [gender, setGender] = useState("M" | "F");
   const [age, setAge] = useState(Number);
 
@@ -100,11 +102,69 @@ export default function Dashboard(props) {
 
   }
 
-  const handleEventImageChange = async (e) => {
+  const handleFingerPrintImageChange = async (e) => {
     if (e.target.files[0]) {
       const image = e.target.files[0];
-      setEventImage(image)
+      setFingerPrintImage(image)
     }
+  }
+
+  const handleFaceImageChange = async (e) => {
+    if (e.target.files[0]) {
+      const image = e.target.files[0];
+      setFaceImage(image)
+    }
+  }
+
+  let fingerprintFormData = new FormData();
+  fingerprintFormData.append('file', fingerPrintImage)
+
+  const fingerprintRequestOptions = {
+    method: 'POST',
+    // headers: myHeaders,
+    body: fingerprintFormData,
+    redirect: 'follow'
+  };
+
+
+  const [imageName, setImageName] = useState();
+  const [imageScore, setImageScore] = useState();
+
+
+  const handleFingerPrintImageSearch = async (e) => {
+    await fetch("http://35.154.50.44:5000/process_fingerprint", fingerprintRequestOptions)
+      .then(response => response.text())
+      .then(async (result) => {
+        const parsedResult = JSON.parse(result);
+        setImageName(parsedResult[0].image_name);
+        setImageScore(parsedResult[0].match_score);
+      })
+      .catch(error => console.log('error', error));
+  }
+
+  let faceFormData = new FormData();
+  faceFormData.append('file', faceImage)
+
+  const faceRequestOptions = {
+    method: 'POST',
+    // headers: myHeaders,
+    body: faceFormData,
+    redirect: 'follow'
+  };
+
+  const [faceName, setFaceName] = useState();
+  const [faceScore, setFaceScore] = useState();
+
+  const handleFaceImageSearch = async (e) => {
+    await fetch("http://35.154.50.44:5000/process_faceimage", faceRequestOptions)
+      .then(response => response.text())
+      .then(async (result) => {
+        const parsedResult = JSON.parse(result);
+        setFaceName(parsedResult[0].image_name);
+        setFaceScore(parsedResult[0].match_score)
+        setSearchValue(parsedResult[0].image_name);
+      })
+      .catch(error => console.log('error', error));
   }
 
 
@@ -122,7 +182,7 @@ export default function Dashboard(props) {
                 value={searchValue}
                 onChange={(e) => { setSearchValue(e.target.value) }}
                 style={{ margin: 10, width: 500 }}
-                placeholder="Search"
+                placeholder="Search by name, father name, address, district, state"
                 margin="normal"
                 InputLabelProps={{
                   shrink: true,
@@ -138,7 +198,7 @@ export default function Dashboard(props) {
                 className={classes.button}
                 startIcon={<Search />}
               >
-                Search
+                Search 
               </Button>
               <Button
                 variant="contained"
@@ -151,16 +211,69 @@ export default function Dashboard(props) {
               >
                 Advanced Search
               </Button>
+              <br />
               <Button
                 variant="contained"
                 color="default"
                 size="medium"
+                style={{ marginRight: 10, margin: 10, padding: 15, paddingRight: 210 }}
+                className={classes.button}
+                startIcon={<FingerprintOutlined />}
+              >
+                <input type='file' onChange={handleFingerPrintImageChange} ref={fingerPrintImageInput}></input>
+              </Button>
+              <Button
+                variant="contained"
+                color="primary"
+                size="medium"
+                onClick={handleFingerPrintImageSearch}
                 style={{ marginRight: 10, margin: 10, padding: 15 }}
                 className={classes.button}
-                startIcon={<FileCopy />}
+                
+                startIcon={<Search />}
               >
-                <input type='file' onChange={handleEventImageChange} ref={eventImageInput}></input>
+                Search Fingerprint
               </Button>
+              <br />
+              {imageName && <Typography style={{ marginLeft: 15 }} variant="span" weight="medium">
+                Image Name is <strong>{imageName}</strong>
+              </Typography>}
+              {imageScore && <> <br />
+                <br /></>}
+              {imageScore && <Typography style={{ marginLeft: 15 }} variant="span" weight="medium">
+                Match Score is <strong>{imageScore}</strong>
+              </Typography>}
+              <br />
+              <Button
+                variant="contained"
+                color="inherit"
+                size="medium"
+                style={{ marginRight: 10, margin: 10, padding: 15, paddingRight: 210 }}
+                className={classes.button}
+                startIcon={<FaceOutlined />}
+              >
+                <input type='file' onChange={handleFaceImageChange} ref={faceImageInput}></input>
+              </Button>
+              <Button
+                variant="contained"
+                color="primary"
+                size="medium"
+                onClick={handleFaceImageSearch}
+                style={{ marginRight: 10, margin: 10, padding: 15 }}
+                className={classes.button}
+                startIcon={<Search />}
+              >
+                Search Face
+              </Button>
+              <br />
+              {faceName && <Typography style={{ marginLeft: 15 }} variant="span" weight="medium">
+                Person Identified is <strong>{faceName}</strong>
+              </Typography>}
+              {faceName && <> <br />
+                <br /></>}
+              {faceScore && <Typography style={{ marginLeft: 15 }} variant="span" weight="medium">
+                Match Score is <strong>{faceScore}</strong>
+              </Typography>}
               <br />
               {advanceSearch && <>
                 <TextField
