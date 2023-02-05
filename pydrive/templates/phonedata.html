@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="Webscrap container">
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link" href="{{ request.url }}/emaildata">Email</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ request.url }}/phonedata">Phone number</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ request.url }}/bindata">BIN</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ request.url }}/combinedscrap">Generate report</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <form method="post">
+      {{ form | crispy }}
+      {% csrf_token %}
+      
+      <button type="submit"  class="custom-btn btn-2">Submit</button>
+<table class="rwd-table">
+        <thead>
+                <tr>
+                        <th>Name</th>
+                        <th>Linked</th>
+                      </tr>
+        </thead>
+ 
+  
+        {% for key, value in Dict.items %}
+                <tr>
+                        <td data-th="Name">{{ key }}</td>
+                        <td data-th="Linked">{{ value }}</td>
+                </tr>
+            {% endfor %}
+    
+</table>
+
+      
+      
+    </form>
+    
+  </div>
+</div>
+
+
+</div>
+
+<style> 
+         
+        table, th, td {
+                margin-left:300px;
+                margin-top:50px;
+                padding:10px;
+                border: 1px solid black;
+                border-collapse: collapse;
+              }
+
+
+
+</style>
+
+
+{% endblock content %}
+
+{% block extra_js %}
+   
+{% endblock extra_js %}

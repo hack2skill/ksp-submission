@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="Webscrap container">
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link" href="{{ request.url }}/emaildata">Email</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ request.url }}/phonedata">Phone number</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ request.url }}/bindata">BIN</a>
+      </li>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{ request.url }}/combinedscrap">Combined report</a>
+    </li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <form method="post">
+      {{ form | crispy }}
+      {% csrf_token %}
+      
+      <button type="submit"  class="custom-btn btn-2">Submit</button>
+      
+    </form>
+    
+  </div>
+</div>
+
+
+</div>
+
+
+{% endblock content %}
+
+{% block extra_js %}
+   
+{% endblock extra_js %}
