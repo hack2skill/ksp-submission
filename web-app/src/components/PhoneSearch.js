@@ -1,3 +1,4 @@
+import axios from 'axios';
 import {
   Accordion,
   AccordionButton,
@@ -9,6 +10,7 @@ import {
 } from '@chakra-ui/react';
 
 import { Table, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
+import { useEffect } from 'react';
 import UpiInfo from './UpiInfo';
 
 const trucallerdata = {
@@ -123,8 +125,18 @@ const telegramdata = {
   ],
   className: 'contacts.ResolvedPeer',
 };
+export default function PhoneSearch({ searchString }) {
+  useEffect(() => {
+    console.log(searchString + ' ccdcosmcksj');
+    var truecallerapidata = {};
+    axios
+      .get(
+        'https://00a7-119-161-98-68.in.ngrok.io/truecaller?phno=' + searchString
+      )
+      .then(a => (trucallerdata = a.data));
+    console.log(truecallerapidata);
+  }, [searchString]);
 
-export default function PhoneSearch() {
   return (
     <>
       <Box px={8}>
