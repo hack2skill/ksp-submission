@@ -1,0 +1,13 @@
+service_name: xfactor_image_match_microservice_v1
+log_level: DEBUG
+
+settings:
+  ip: 0.0.0.0
+  port: 4007
+
+path:
+  log_path: "./log"
+
+mongodb_credentials:
+    database: 'exfactor'
+    mongodb_url: "mongodb+srv://afghaniiit:iiitbangalore@cluster0.13dtx.mongodb.net/exfactor?retryWrites=true&w=majority"

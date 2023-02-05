@@ -1,0 +1,9 @@
+import os
+
+
+def path():
+    """
+
+    :return: the root path
+    """
+    return os.path.dirname(__file__)

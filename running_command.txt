@@ -1,0 +1,44 @@
+sudo ufw allow 4007
+cd ~/xfactor_image_match_microservices_v2
+gunicorn run_flasked_api:app_wsgi --preload -b 0.0.0.0:4007 --daemon
+
+#-----------------------------------------------------------------------------------------------------------------------
+sudo vim /etc/systemd/system/xfactor_image_match_microservices_v2.service
+
+Let’s put a description of our service here and tell the init system to only start this after the networking target has been reached:
+    [Unit]
+    Description=Gunicorn instance to serve xfactor_image_match_microservices_v2
+    After=network.target
+
+Next, let’s open up the [Service] section. This will specify the user and group that we want the process to run under.
+Let’s give our regular user account ownership of the process since it owns all of the relevant files.
+Let’s also give group ownership to the www-data group so that Nginx can communicate easily with the Gunicorn processes.
+Remember to replace the username here with your username:
+
+[Unit]
+Description=Gunicorn instance to serve xfactor_image_match_microservices_v2
+After=network.target
+
+[Service]
+User=amitparashar
+Group=www-data
+WorkingDirectory=/home/sammy/myproject
+Environment="PATH=/home/sammy/myproject/myprojectenv/bin"
+ExecStart=/home/sammy/myproject/myprojectenv/bin/gunicorn --workers 3 --bind unix:myproject.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+
+[Unit]
+Description=Gunicorn instance to serve xfactor_image_match_microservices_v2
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/projects/xfactor_image_match_microservices_v2
+Environment="PATH=/home/ubuntu/venv_dir/venv_image_match_v1/bin"
+ExecStart=/home/ubuntu/venv_dir/venv_image_match_v1/bin/gunicorn --workers 3 --bind unix:xfactor_image_match_microservices_v2.sock -m 007 run_flasked_api:app_wsgi --preload -b 0.0.0.0:4007
