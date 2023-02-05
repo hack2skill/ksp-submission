@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import KSP from "../../modals/KSPModal";
+import KSP from "./KspModal";
 mongoose.set("strictQuery", false);
 
 mongoose.connect(process.env.mongo_url, () => {
