@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <%for(let prod of product) { %>
+            <li>
+
+                <p>
+                    State: <%= prod.State %>
+                </p>
+                <p>
+                    FIRNo: <%= prod.FIRNo %>
+                </p>
+                <p>
+                    District_Name: <%= prod.District_Name %>
+                </p>
+                <p>
+                    PS_Name: <%= prod. PS_Name %>
+                </p>
+                <p>
+                    Person_Name: <%= prod. Person_Name %>
+                </p>
+                <p>
+                    Arrest_Date: <%= prod. Arrest_Date %>
+                </p>
+                <p>
+                    Gender:<%= prod. Gender %>
+                </p>
+                <p>
+                    Age: <%= prod. Age %>
+                </p>
+                <p>
+                    Pres_Address1: <%= prod. Pres_Address1 %>
+                </p>
+                <p>
+                    FIR_ID: <%= prod. FIR_ID %>
+                </p>
+                </a>
+            </li>
+            <% } %>
+                    
+    </ul>
+
+</body>
+
+</html>
