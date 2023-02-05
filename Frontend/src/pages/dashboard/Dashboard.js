@@ -48,7 +48,7 @@ export default function Dashboard(props) {
         "must": {
           "multi_match": {
             "query": searchValue,
-            "operator": "and",
+            "operator": "or",
             "fuzziness": "AUTO",
             "fields": [
               "Name^11",
@@ -132,7 +132,7 @@ export default function Dashboard(props) {
 
 
   const handleFingerPrintImageSearch = async (e) => {
-    await fetch("http://35.154.50.44:5000/process_fingerprint", fingerprintRequestOptions)
+    await fetch("https://35.154.50.44:5000/process_fingerprint", fingerprintRequestOptions)
       .then(response => response.text())
       .then(async (result) => {
         const parsedResult = JSON.parse(result);
@@ -156,7 +156,7 @@ export default function Dashboard(props) {
   const [faceScore, setFaceScore] = useState();
 
   const handleFaceImageSearch = async (e) => {
-    await fetch("http://35.154.50.44:5000/process_faceimage", faceRequestOptions)
+    await fetch("https://35.154.50.44:5000/process_faceimage", faceRequestOptions)
       .then(response => response.text())
       .then(async (result) => {
         const parsedResult = JSON.parse(result);
