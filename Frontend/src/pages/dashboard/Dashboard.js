@@ -93,7 +93,7 @@ export default function Dashboard(props) {
   const handleSearch = async () => {
     await fetch("https://fcd19a3882ba4cf99f3386ed6885b50f.ap-south-1.aws.elastic-cloud.com:443/fir_new,fir_ktk/_search?pretty", requestOptions)
       .then(response => response.text())
-      .then(result => { 
+      .then(result => {
         const parsedResult = JSON.parse(result);
         console.log(parsedResult)
         setSearchOptions(parsedResult.hits.hits);
@@ -198,7 +198,7 @@ export default function Dashboard(props) {
                 className={classes.button}
                 startIcon={<Search />}
               >
-                Search 
+                Search
               </Button>
               <Button
                 variant="contained"
@@ -229,7 +229,7 @@ export default function Dashboard(props) {
                 onClick={handleFingerPrintImageSearch}
                 style={{ marginRight: 10, margin: 10, padding: 15 }}
                 className={classes.button}
-                
+
                 startIcon={<Search />}
               >
                 Search Fingerprint
@@ -238,8 +238,7 @@ export default function Dashboard(props) {
               {imageName && <Typography style={{ marginLeft: 15 }} variant="span" weight="medium">
                 Image Name is <strong>{imageName}</strong>
               </Typography>}
-              {imageScore && <> <br />
-                <br /></>}
+              {imageScore && <br />}
               {imageScore && <Typography style={{ marginLeft: 15 }} variant="span" weight="medium">
                 Match Score is <strong>{imageScore}</strong>
               </Typography>}
@@ -269,12 +268,10 @@ export default function Dashboard(props) {
               {faceName && <Typography style={{ marginLeft: 15 }} variant="span" weight="medium">
                 Person Identified is <strong>{faceName}</strong>
               </Typography>}
-              {faceName && <> <br />
-                <br /></>}
+              {faceName && <br />}
               {faceScore && <Typography style={{ marginLeft: 15 }} variant="span" weight="medium">
                 Match Score is <strong>{faceScore}</strong>
               </Typography>}
-              <br />
               {advanceSearch && <>
                 <TextField
                   id="outlined-full-width"
