@@ -5,7 +5,7 @@ import Table from "../components/Table";
 
 const Home = () => {
   const [searchData, setSearchData] = useState({
-    name: "CHANDAPPA",
+    name: "",
     ageFrom: "20",
     ageTo: "30",
     database: {
