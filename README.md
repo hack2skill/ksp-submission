@@ -12,7 +12,7 @@ Datazip started out as a end-to-end no-code data unification and analytics produ
 
 ### Contents
 
-- [Frontend App](./Frontend)
+- [Frontend Application](./Frontend)
 - [Machine Learning Service](./MLS)
 
 
@@ -32,13 +32,14 @@ Datazip started out as a end-to-end no-code data unification and analytics produ
 2. ImageNet
 3. Azure ML Notebooks
 4. Azure App Services - For Deploying the Frontend
-5. ReactJS
+5. ReactJS - UI Library
 6. Node/NPM
-7. MaterialUI
-8. JavaScript
+7. MaterialUI - UI Components
+8. JavaScript - Frontend
 9. Firebase - Authentication
 10. Python - Backend
 11. Airbyte
+12. ElasticSearch - To Power the Search
 
 ### What's next for Datazip
 
