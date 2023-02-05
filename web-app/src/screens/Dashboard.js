@@ -145,12 +145,6 @@ export default function Dashboard() {
       });
   }
 
-  function getWhatsapp(searchString) {
-    axios.get('http://wa.me/+91' + searchstring).then(e => {
-      e.status == 200 ? setwhats(true) : setwhats(false);
-    });
-  }
-
   useEffect(() => {
     console.log(newtruecaller);
     console.log('vfnviefnv');
@@ -186,7 +180,6 @@ export default function Dashboard() {
           onClick={e => {
             setSearch(true);
             getTruecallerDatafun(searchstring);
-            getWhatsapp(searchstring);
           }}
         >
           Search
@@ -203,7 +196,9 @@ export default function Dashboard() {
           {/* facebook */}
           <>
             <Box px={8}>
-              <Text>Phone Search</Text>
+              <Text pb="5" fontWeight={'semibold'}>
+                Phone Search
+              </Text>
               <Accordion defaultIndex={[]} allowMultiple>
                 <AccordionItem bg={'#EDF2F7'}>
                   <h2>
@@ -221,6 +216,7 @@ export default function Dashboard() {
                     <Link
                       href={'https://wa.me/+91' + searchstring}
                       target="_blank"
+                      color={'blue'}
                     >
                       https://wa.me/+91{searchstring}
                     </Link>

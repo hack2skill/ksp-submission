@@ -5,7 +5,9 @@ export default function UpiInfo({ input, type = 'email' }) {
   const email = ['okicici', 'okaxis', 'okhdfcbank', 'oksbi'];
   return (
     <>
-      <Box>You can check the following for the existing UPI ids</Box>
+      <Box fontWeight={'bold'}>
+        You can check the following for the existing UPI ids
+      </Box>
 
       <OrderedList>
         {type == 'phone' &&
