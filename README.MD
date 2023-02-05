@@ -1,5 +1,9 @@
-# SETUP
+# ksp-submission
 
-1. npm i
-2. npm start (to run server)
-3. open http://localhost:8000/ on your browser
+This repository is created for Karnataka State Police Hackathon 2023 - submission collection.
+
+## Team Information
+
+### Team Name - The Third eye
+
+### Problem Statement -AI- Face Detection
