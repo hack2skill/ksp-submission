@@ -1,0 +1,33 @@
+requests
+python-dotenv
+pycryptodome
+xhtml2pdf
+
+# Scrapping
+selenium
+beautifulsoup4
+xmltodict
+deep-translator
+
+# Framework
+Django
+psycopg2
+
+# Proxy
+free-proxy
+
+# Sherlock
+certifi
+colorama
+PySocks
+requests-futures
+stem
+torrequest
+pandas
+openpyxl
+
+#Language Processing
+nltk
+
+# Input Sanitization
+bleach
