@@ -1,0 +1,54 @@
+version: '3'
+services:
+  searxng:
+    container_name: searxng
+    image: searxng/searxng:latest
+    restart: always
+    ports:
+     - "8567:8080"
+    volumes:
+      - ./data/searxng:/etc/searxng:rw
+    environment:
+      - SEARXNG_BASE_URL=http://localhost
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
+      - DAC_OVERRIDE
+  
+  tor:
+    container_name: tor
+    image: dperson/torproxy
+    restart: always
+    ports:
+      - '8118:8118'
+      - '9050:9050'
+  
+  selenium-chrome:
+    container_name: selenium
+    image: 'selenium/standalone-chrome'
+    restart: always
+    shm_size: '2gb'
+    ports:
+      - '4444:4444'
+      - '7900:7900'
+    environment:
+      - SE_NODE_MAX_SESSIONS=10
+      - SE_NODE_OVERRIDE_MAX_SESSIONS=true
+      - SE_VNC_NO_PASSWORD=1
+
+  postgres:
+    container_name: postgres
+    image: postgres:alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=${USERNAME}
+      - POSTGRES_PASSWORD=${PASSWORD}
+      - POSTGRES_DB=${DATABASE}
+    ports:
+      - '5432:5432'
+    volumes: 
+      - ./data/postgres:/var/lib/postgresql/data
+    
