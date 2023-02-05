@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "scraper",
+  "description": "Scrape the images in the webpage.",
+  "version": "1.0",
+  "icons": {
+    "16": "/img/police.png",
+    "48": "/img/police-48.png",
+    "128": "/img/police-128.png"
+  },
+  "permissions": ["notifications", "downloads", "storage", "activeTab", "scripting", "tabs"],
+  "action": {
+    "default_title":"Face Detect",
+    "default_popup":"index.html",
+    "default_icon": {
+      "16": "/img/police.png",
+      "48": "/img/police-48.png",
+      "128": "/img/police-128.png"
+    }
+  },
+  "content_scripts":[{
+    "matches":["https://*/*"],
+    "js":["index.js"]
+  }]
+}
