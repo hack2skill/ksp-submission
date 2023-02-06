@@ -88,7 +88,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'pydrive_db',
         'USER': 'root',
-        'PASSWORD': '$ara$wathi',
+        'PASSWORD': '',
         'HOST': '127.0.0.1',
         'PORT': '',
         'OPTIONS': {
