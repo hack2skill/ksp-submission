@@ -6,3 +6,7 @@ This repository is created for Karnataka State Police Hackathon 2023 - submissio
 
 
 
+#### Never share original work! sorry! 
+
+
+
