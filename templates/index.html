@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Excel File Upload</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  </head>
+  <body>
+    <center> 
+    <div class="card text-white bg-primary mb-3 " style="max-width: 50rem; "> 
+    <h1 class="card-header">Upload Excel File</h1>
+    <div class="card-body"> 
+    <form action="/analysis" method="post" enctype="multipart/form-data">
+      <div>
+        <div class="form-group">
+          <label for="formFile" class="form-label mt-4" >Excel file Required:</label>
+        </div>
+        <div class = "dropzone">
+          <input class="form-control" type="file" id="file " accept=".xlsx, .xlsm, .xltx, .xltm, .xls" required />
+        </div>
+      </div>
+      <br>
+      <div>
+        <input type="submit" value="Submit" class="btn btn-primary"/>
+      </div>
+    </form> 
+  </div>
+  </div>
+</center>
+    <!-- 
+    {% if column1 %}
+      <h2>Column 1 data</h2>
+      <ul>
+        {% for item in column1 %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+      <h2>Column 2 data</h2>
+      <ul>
+        {% for item in column2 %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    -->
+  </body>
+</html>

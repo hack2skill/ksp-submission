@@ -1,0 +1,49 @@
+{% extends "analysis.html" %}
+
+{% block content %}
+<h2>User Details:</h2>
+<p> Transaction Details</p>
+
+<table id="transactions" class="display" width = 100%>
+   <thead>
+    <tr class="table-light">
+        <th scope="row">Date</th>
+        <th scope="row">Transaction Analysis</th>
+        <th scope="row">Reference</th>
+        <th scope="row">Debit</th>
+        <th scope="row">Credit</th>
+        <th scope="row">Balance</th>
+    </tr>
+</thead>
+<tbody>
+    "{% for i in range(0, date1|length) %}"
+      <tr>
+        <td>{{ date1[i] }}</td>
+        <td>{{ TransactionAnalyser1[i] }}</td>
+        <td>{{ reference1[i] }}</td>
+        <td>{{ debit1[i] }}</td>
+        <td>{{ credit1[i] }}</td>
+        <td>{{ balance1[i] }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<br>
+<table id="transactions" class="display" width = 100%>
+    <thead>
+     <tr class="table-light">
+         <th scope="row">Transaction Analysis</th>
+         <th scope="row">Value</th>
+     </tr>
+ </thead>
+ <tbody>
+     "{% for i in value1 %}"
+       <tr>
+         <td>{{ i }}</td>
+         <td>{{ value1[i] }}</td>
+       </tr>
+     {% endfor %}
+   </tbody>
+ </table>
+{% endblock %}

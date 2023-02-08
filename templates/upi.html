@@ -1,0 +1,43 @@
+{% extends "analysis.html" %}
+
+{% block content %}
+
+<style>
+    table, th, td {
+      border: 2px solid rgb(0, 0, 0);
+      border-collapse: collapse;
+    }
+    </style>
+<h2>Unified Payments Interface (UPI)</h2>
+<!--  UPI1=UPI, TransactionAnalyser1=TransactionAnalyser, mupi1=mupi, transactionType1=transactionType, date1=date, reference1=reference, debit1=debit, credit1=credit, balance1=balance)
+
+ -->
+
+ <table id="transactions" class="display">
+    <p>The total upi transactions {{ UPI1 }}</p>
+   <p>
+    Frequency
+   </p>
+   <thead>
+    <tr class="table-light">
+        <th scope="row">Connection</th>
+        <th scope="row">Freuqnecy</th>
+    </tr>
+</thead>
+<tbody>
+    {% for name in mupi1 %}
+    <tr class="table-light">
+      <td>{{ name }}</td>
+      <td>{{ mupi1[name] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<br>
+
+
+
+
+
+{% endblock %}

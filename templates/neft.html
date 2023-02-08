@@ -1,0 +1,31 @@
+{% extends "analysis.html" %}
+
+{% block content %}
+<style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    </style>
+<h2>National Electronic Funds Transfer (NEFT)</h2>
+<table id="transactions" class="display">  
+<p>The total neft transactions {{ NEFT1 }}</p>
+<p>
+    Frequency
+   </p>
+   <thead>
+    <tr class="table-light">
+        <th scope="row">Connection</th>
+        <th scope="row">Freuqnecy</th>
+    </tr>
+</thead>
+<tbody>
+    {% for name in mneft1 %}
+    <tr class="table-light">
+      <td> {{ name }} </td>
+      <td> {{ mneft1[name] }} </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
