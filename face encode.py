@@ -32,7 +32,7 @@ net.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
 net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 
 
-folder='C:/Users/sanjai/KSP face recognition api/missing'
+folder='enter folder of image data'
 database={}
 def face_encode(folder):
     for filename in listdir(folder):
@@ -91,4 +91,5 @@ def face_encode(folder):
     pickle.dump(database, myfile)
     myfile.close()
 
+face_encode(folder)
 
