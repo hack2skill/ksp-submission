@@ -33,8 +33,9 @@ Datazip started out as a end-to-end no-code data unification and analytics produ
 
 ## HOW TO RUN
 1. Run the UI : 
+  --> Prerequisites: Node v14.18.0 or Higher
   --> Clone the repo and move the the folder called Frontend
-  --> Run the react application using following commands npm run start
+  --> Run the react application using following commands `npm i` &  `npm run start`
   --> You should be able to see a console and Text search should work.
 
 
@@ -46,6 +47,7 @@ Datazip started out as a end-to-end no-code data unification and analytics produ
 
 
 3. Image search for finger print & Arrest image dataset provided
+  --> Prerequisites: Python 3.8 or higher
   --> Now first download all the images from arrest dataset (https://drive.google.com/file/d/18OJF5bh5J9UHuXM9TL-q9nFlvfCtHTRh/view?usp=share_link)
   --> Segregate those images with jpg extension in jpg-folder & png extension in png-folder
   --> Copy `FacialRecogDataPreparation.py` in the same folder and install all dependencies like pip3 install Pillow, pip3 install tensorflow, etc (Any others as well if error comes)
