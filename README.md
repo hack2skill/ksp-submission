@@ -4,6 +4,10 @@ This repository is created for Karnataka State Police Hackathon 2023 - submissio
 ### Team Name - The Code Wizards
 ### Problem Statement - AI-FACE DETECTION
 
+### Admin credential : 
+#### email : admin@gmail.com
+#### password : 123456
+
 Steps to run project-
 
 1) Clone this repo in your system
