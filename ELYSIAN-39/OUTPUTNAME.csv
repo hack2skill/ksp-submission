@@ -1,0 +1,139 @@
+Page: 1
+
+Table: Table_1
+Mardi : ,09h15-12h45 /13h45-17h30 ,
+Mercredi : ,09h15-12h45 /13h45-17h30 ,
+J eudi ,109h15-12h45/14h45-18h30 ,
+Vendredi ,09h15-12h45 V13h45-17h30 ,
+Samedi ,09h00-13h00/13h45-16h15 ,
+
+Table: Table_2
+Identifiant client ,SYNTHESE de vos comptes en euros ,,,,
+DOE J OHN ,MR DOE J OHN ,,,,
+123456789 ,COMPTE DE DEPOT ,N° 12345 12345 123456789 ,Solde au 19/01/17 ,+238,52 ,
+,LIV.A EN CPTE ,N° 12345 12345 123456789 ,Solde au 19/01/17 ,+403,12 ,
+,L. EUNE EN CPTE ,N° 12345 12345 123456789 ,Solde au 19/01/17 ,+1 003,90 ,
+
+Table: Table_3
+Date ,Détail des opérations en euros ,Débit ,Crédit ,
+,SOLDE PRECEDENT AU 19/12/16 ,,1 .481,88 ,
+21/12 ,RETRAIT DAB 20-12-18706-075945 ,90,00 ,,
+21/12 ,RETRAIT DAB 20-12-18706-075945 ,270,00 ,,
+22/12 ,CB COMPASS GROUP FACT 201216 ,20,00 ,,
+23/12 ,CB INTERMARCHE FACT 211216 ,13,99 ,,
+24/12 ,CB AUCHAN CARBURAN FACT 221216 ,55,52 ,,
+24/12 ,CB LA MAISON LYOVE FACT 221216 ,5,00 ,,
+27/12 ,CHEQUE N°0000011 ,1,90 ,,
+27/12 ,CB INTERMARCHE FACT 261216 ,44,79 ,,
+29/12 ,VIR SEPA EURO ZOY ASSOCIES S ,,1937,43 ,
+,Payment DECEMBRE 2016 -Réf. donneur d'ordre : DLP/48255/2016-12-21 ,,,
+29/12 ,Virement par mobile ,1000,00 ,,
+29/12 ,CB El Sanef 2012-2612 FACT 261216 ,19,60 ,,
+30/12 ,PRLV MOYNE TELECOM T ,21,27 ,,
+,PAGP0100GEPSN6 -Réf. donneur d'ordre : PAGP0100GEPSN6 -Réf. du mandat : BTAW0G1UH5170 ,,,
+30/12 ,CB LA MAISON LYOVE FACT 281216 ,5,00 ,,
+31/12 ,CB COMPASS GROUP FACT 291216 ,20,00 ,,
+03/01 ,CB GOOGLE Supermoyne FACT 291216 ,9,99 ,,
+
+
+
+Page: 2
+
+Table: Table_1
+Date ,Détail des opérations en euros ,Débit ,Crédit ,
+03/01 ,CB ROC31773DIY2 FACT 301216 ,49,65 ,,
+03/01 ,CB CASTELDIS FACT 020117 ,152,06 ,,
+04/01 ,ECH PRET 1234567 DU 04/01/17 ,334,02 ,,
+05/01 ,CB SANEST FACT 040117 ,348,33 ,,
+06/01 ,CB Sanef 2712-0201 FACT 020117 ,15,20 ,,
+07/01 ,Virement par mobile ,,300,00 ,
+07/01 ,CB LA MAISON LYOVE FACT 050117 ,5,00 ,,
+07/01 ,CB COMPASS GROUP FACT 050117 ,20,00 ,,
+09/01 ,CB CASTELDIS FACT 070117 ,70,98 ,,
+09/01 ,CB CASTELDIS FACT 070117 ,49,00 ,,
+10/01 ,PRLV MY ASSURANCES SA Cotisation Assurance ABC123456789 -Réf. donneur d'ordre : NUM ABC123456789/REF ABC123456789 -Réf. du mandat : ABC123456789 ,845,78 ,,
+12/01 ,CB Sanef 0301-0901 FACT 090117 ,15,20 ,,
+12/01 ,RETRAIT DAB 11-01-30004-217338 ,50,00 ,,
+13/01 ,MONEYO ,1,00 ,,
+16/01 ,PRLV Zoy Telecom ABC123456789 -Réf. donneur d'ordre : ABC123456789 -Réf. du mandat : ABC123456789 ,31,86 ,,
+16/01 ,CB INTERMARCHE FACT 130117 ,45,45 ,,
+17/01 ,CB LA MAISON LYOVE FACT 130117 ,5,00 ,,
+19/01 ,Virement par mobile ,,150,00 ,
+19/01 ,CB El Sanef 1001-1601 FACT 160117 ,15,20 ,,
+,frais bancaires et cotisations pour un total de -1,00€ ,,,
+
+Table: Table_2
+Date ,Détail des opérations en euros ,Débit ,Crédit ,
+,SOLDE PRECEDENT AU 19/01/16 ,,13 092,94 ,
+03/02 ,VIR SEPA MR DOE J OHN virement Ivret a ,,1000,00 ,
+03/02 ,Virement par mobile ,92,94 ,,
+03/03 ,VIR SEPA MR DOE J OHN ,,1000,00 ,
+
+
+
+Page: 3
+
+Table: Table_1
+Date ,Détail des opérations en euros ,Débit ,Crédit ,
+,virement Ivret a ,,,
+21/03 ,Virement par mobile ,200,00 ,,
+29/03 ,Virement par mobile ,5 800,00 ,,
+04/04 ,VIR SEPA MR DOE J OHN virement Ivret a ,,1000,00 ,
+07/04 ,Virement par mobile ,300,00 ,,
+12/04 ,Virement par mobile ,300,00 ,,
+28/04 ,Virement par mobile ,,100,00 ,
+03/05 ,VIR SEPA MR DOE J OHN virement Ivret a ,,1000,00 ,
+09/05 ,Virement par mobile ,500,00 ,,
+11/05 ,Virement par mobile ,1000,00 ,,
+11/05 ,Virement par mobile ,500,00 ,,
+14/05 ,Virement par mobile ,1000,00 ,,
+03/06 ,VIR SEPA MR DOE J OHN virement Ivret a ,,1000,00 ,
+04/07 ,VIR SEPA MR DOE J OHN virement Ivret a ,,1000,00 ,
+18/07 ,Virement par mobile ,150,00 ,,
+25/07 ,Virement par mobile ,100,00 ,,
+26/07 ,Virement par mobile ,100,00 ,,
+12/08 ,Virement par mobile ,1000,00 ,,
+20/08 ,Virement par mobile ,350,00 ,,
+24/08 ,Virement par mobile ,300,00 ,,
+16/09 ,RET. VIREMENT INTERNE RB VIR ,7 000,00 ,,
+24/10 ,Virement par mobile ,,1500,00 ,
+21/11 ,Virement par mobile ,400,00 ,,
+23/11 ,Virement par mobile ,300,00 ,,
+25/11 ,Virement par mobile ,200,00 ,,
+07/12 ,Virement par mobile ,300,00 ,,
+31/12 ,INTERETS 2016 ,,53,12 ,
+07/01 ,Virement par mobile ,300,00 ,,
+19/01 ,Virement par mobile ,150,00 ,,
+
+
+
+Page: 4
+
+Table: Table_1
+Date ,Détail des opérations en euros ,Débit ,Crédit ,
+05/02 ,Virement par mobile ,640,53 ,,
+10/02 ,Virement par mobile ,100,00 ,,
+13/02 ,Virement par mobile ,250,00 ,,
+22/02 ,Virement par mobile ,100,00 ,,
+26/02 ,Virement par mobile ,,350,00 ,
+09/03 ,Virement par mobile ,700,00 ,,
+18/03 ,Virement par mobile ,200.00 ,,
+29/12 ,Virement par mobile ,,1000,00 ,
+31/12 ,INTERETS 2016 ,,3,90 ,
+,,,1003,90 ,
+
+Table: Table_2
+Date ,Détail des opérations en euros ,Débit ,Crédit ,
+,,,3703,59 ,
+21/05 ,VERSEMENT CAT VALEUR AU 16/05 ,,272,96 ,
+16/09 ,VERSEMENT D'INTERETS ,,26,66 ,
+16/09 ,CLOTURE VIR INTERNE FE VIR ,4 003,21 ,,
+Vos ,codes bancaires internationaux ,,0,00 ,
+
+Table: Table_3
+COMPTE DE DEPOT ,BIC ,: CEPA FRPP 000 - IBAN : FR9 12345 12345 123456789 ,
+LIV.A EN CPTE ,BIC ,: CEPA FRPP 000 IBAN : FR 99 12345 12345 123456789 ,
+L.J EUNE EN CPTE ,BIC ,: CEPA FRPP 000 IBAN : FR 99 12345 12345 123456789 ,
+
+
+
